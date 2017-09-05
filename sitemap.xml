@@ -173,6 +173,24 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/api/4.0.0-M58/</loc>
+     <lastmod>2017-09-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/api/4.0.0-M59/</loc>
+     <lastmod>2017-09-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/api/4.0.0-M60/</loc>
+     <lastmod>2017-09-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
