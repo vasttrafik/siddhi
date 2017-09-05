@@ -719,9 +719,9 @@
 <p>To use Siddhi as a library by embedding it in a Java project, follow the steps below:</p>
 <h4 id="step-1-creating-a-java-project">Step 1: Creating a Java Project</h4>
 <ul>
-<li>Create a Java project using Maven and include the following dependencies in its <code>pom.xml</code> file.
-  <code>xml
-   &lt;dependency&gt;
+<li>Create a Java project using Maven and include the following dependencies in its <code>pom.xml</code> file.</li>
+</ul>
+<pre><code class="xml">   &lt;dependency&gt;
      &lt;groupId&gt;org.wso2.siddhi&lt;/groupId&gt;
      &lt;artifactId&gt;siddhi-core&lt;/artifactId&gt;
      &lt;version&gt;4.x.x&lt;/version&gt;
@@ -735,10 +735,11 @@
      &lt;groupId&gt;org.wso2.siddhi&lt;/groupId&gt;
      &lt;artifactId&gt;siddhi-query-compiler&lt;/artifactId&gt;
      &lt;version&gt;4.x.x&lt;/version&gt;
-   &lt;/dependency&gt;</code>
-  Add the following repository configuration to the same file.
-  <code>xml
-   &lt;repositories&gt;
+   &lt;/dependency&gt;
+</code></pre>
+
+<p>Add the following repository configuration to the same file.</p>
+<pre><code class="xml">   &lt;repositories&gt;
      &lt;repository&gt;
          &lt;id&gt;wso2.releases&lt;/id&gt;
          &lt;name&gt;WSO2 internal Repository&lt;/name&gt;
@@ -749,17 +750,18 @@
              &lt;checksumPolicy&gt;ignore&lt;/checksumPolicy&gt;
          &lt;/releases&gt;
      &lt;/repository&gt;
-   &lt;/repositories&gt;</code>
-  <strong>Note</strong>: You can create the Java project using any method you prefer. The required dependencies can be downloaded from <a href="http://maven.wso2.org/nexus/content/groups/wso2-public/org/wso2/siddhi/">here</a>.</li>
-<li>Create a new Java class in the Maven project.</li>
-<li>Define a stream definition as follows. The stream definition defines the format of the incoming events.
+   &lt;/repositories&gt;
+</code></pre>
+
+<p><strong>Note</strong>: You can create the Java project using any method you prefer. The required dependencies can be downloaded from <a href="http://maven.wso2.org/nexus/content/groups/wso2-public/org/wso2/siddhi/">here</a>.
+<em> Create a new Java class in the Maven project.
+</em> Define a stream definition as follows. The stream definition defines the format of the incoming events.
   <code>java
-  String definition = "@config(async = 'true') define stream cseEventStream (symbol string, price float, volume long);";</code></li>
-<li>Define a Siddhi query as follows.
+  String definition = "@config(async = 'true') define stream cseEventStream (symbol string, price float, volume long);";</code>
+* Define a Siddhi query as follows.
   <code>java
   String query = "@info(name = 'query1') from cseEventStream#window.timeBatch(500)  select symbol, sum(price) as price, sum(volume) as volume group by symbol insert into outputStream ;";</code>
-  This Siddhi query stores incoming events for 500 milliseconds, groups them by symbol and calculates the sum for price and volume. Then it inserts the results into a stream named <code>outputStream</code>.</li>
-</ul>
+  This Siddhi query stores incoming events for 500 milliseconds, groups them by symbol and calculates the sum for price and volume. Then it inserts the results into a stream named <code>outputStream</code>.</p>
 <h4 id="step-2-creating-siddhi-application-runtime">Step 2: Creating Siddhi Application Runtime</h4>
 <p>A Siddhi application is a self contained, valid set of stream definitions and queries. This step involves creating a runtime representation of a Siddhi application by combining the stream definition and the Siddhi query you created in Step 1.</p>
 <pre><code class="java">
