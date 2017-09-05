@@ -15,7 +15,7 @@
     
     
       
-        <title>4.0.0-M49 - WSO2 Siddhi</title>
+        <title>4.0.0-M52 - WSO2 Siddhi</title>
       
     
     
@@ -81,7 +81,7 @@
                 </span>
               
             
-            4.0.0-M49
+            4.0.0-M52
           
         </span>
       </div>
@@ -407,6 +407,42 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../4.0.0-M49/" title="4.0.0-M49" class="md-nav__link">
+      4.0.0-M49
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4.0.0-M50/" title="4.0.0-M50" class="md-nav__link">
+      4.0.0-M50
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../4.0.0-M51/" title="4.0.0-M51" class="md-nav__link">
+      4.0.0-M51
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -418,11 +454,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        4.0.0-M49
+        4.0.0-M52
       </label>
     
-    <a href="./" title="4.0.0-M49" class="md-nav__link md-nav__link--active">
-      4.0.0-M49
+    <a href="./" title="4.0.0-M52" class="md-nav__link md-nav__link--active">
+      4.0.0-M52
     </a>
     
       
@@ -800,42 +836,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../4.0.0-M50/" title="4.0.0-M50" class="md-nav__link">
-      4.0.0-M50
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../4.0.0-M51/" title="4.0.0-M51" class="md-nav__link">
-      4.0.0-M51
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../4.0.0-M52/" title="4.0.0-M52" class="md-nav__link">
-      4.0.0-M52
-    </a>
   </li>
 
         
@@ -1355,7 +1355,7 @@
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define stream cseEventStream (symbol string, price float, volume long);
 define window cseEventWindow (symbol string, price float, volume long) sort(2,volume, 'asc');
 @info(name = 'query0')
@@ -1420,7 +1420,7 @@ insert all events into outputStream ;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int) externalTimeBatch(eventTime, 1 sec) output expired events;
 @info(name = 'query0')
 from cseEventStream
@@ -1433,13 +1433,13 @@ insert expired events into outputStream ;
 
 <p style="word-wrap: break-word">This will processing events that arrive every 1 seconds from the eventTime.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int) externalTimeBatch(eventTime, 20 sec, 0) output expired events;
 </code></pre>
 
 <p style="word-wrap: break-word">This will processing events that arrive every 1 seconds from the eventTime. Starts on 0th millisecond of an hour.</p>
 
-<p><span id="example3" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE3</span></p>
+<p><span id="example-3" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 3</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int) externalTimeBatch(eventTime, 2 sec, eventTimestamp, 100) output expired events;
 </code></pre>
 
@@ -1488,7 +1488,7 @@ insert expired events into outputStream ;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define stream purchase (cardNo string, price float);
 define window purchaseWindow (cardNo string, price float) lossyFrequent(0.1, 0.01);
 @info(name = 'query0')
@@ -1502,7 +1502,7 @@ insert all events into PotentialFraud;
 
 <p style="word-wrap: break-word">lossyFrequent(0.1, 0.01) returns all the events of which the current frequency exceeds 0.1, with an error bound of 0.01.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>define stream purchase (cardNo string, price float);
 define window purchaseWindow (cardNo string, price float) lossyFrequent(0.3, 0.05, cardNo);
 @info(name = 'query0')
@@ -1543,7 +1543,7 @@ insert all events into PotentialFraud;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int) time(20) output all events;
 @info(name = 'query0')
 from cseEventStream
@@ -1583,7 +1583,7 @@ insert all events into outputStream ;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int) externalTime(eventTime, 20 sec) output expired events;
 @info(name = 'query0')
 from cseEventStream
@@ -1631,7 +1631,7 @@ insert expired events into outputStream ;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define stream cseEventStream (symbol string, price float, volume int);
 define window cseEventWindow (symbol string, price float, volume int) timeLength(2 sec, 10);
 @info(name = 'query0')
@@ -1679,7 +1679,7 @@ insert all events into outputStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>@info(name = 'query1')
 from purchase[price &gt;= 30]#window.frequent(2)
 select cardNo, price
@@ -1688,7 +1688,7 @@ insert all events into PotentialFraud;
 
 <p style="word-wrap: break-word">This will returns the 2 most frequent events.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>@info(name = 'query1')
 from purchase[price &gt;= 30]#window.frequent(2, cardNo)
 select cardNo, price
@@ -1724,7 +1724,7 @@ insert all events into PotentialFraud;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int)cron('*/5 * * * * ?');
 @info(name = 'query0')
 from cseEventStream
@@ -1764,7 +1764,7 @@ insert into outputStream ;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int) lengthBatch(10) output all events;
 @info(name = 'query0')
 from cseEventStream
@@ -1804,7 +1804,7 @@ insert all events into outputStream ;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int) length(10) output all events;
 @info(name = 'query0')
 from cseEventStream
@@ -1852,7 +1852,7 @@ insert all events into outputStream ;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>define window cseEventWindow (symbol string, price float, volume int) timeBatch(20) output all events;
 @info(name = 'query0')
 from cseEventStream
@@ -1892,7 +1892,7 @@ insert all events into outputStream ;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>@info(name = 'query1') from inputStream
 select maximum(price1, price2, price3) as max
 insert into outputStream;
@@ -1908,7 +1908,7 @@ insert into outputStream;
 </code></pre>
 
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from TempStream
 select convert(roomNo, 'string') as roomNo, temp, UUID() as messageID
 insert into RoomTempStream;
@@ -1951,7 +1951,7 @@ insert into RoomTempStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select symbol as name, cast(temp, 'double') as temp
 insert into barStream;
@@ -2002,7 +2002,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>@info(name = 'query1')
 from sensorEventStream
 select sensorValue, ifThenElse(sensorValue&gt;35,'High','Low') as status
@@ -2011,7 +2011,7 @@ insert into outputStream;
 
 <p style="word-wrap: break-word">This will returns High if sensorValue = 50.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>@info(name = 'query1')
 from sensorEventStream
 select sensorValue, ifThenElse(voltage &lt; 5, 0, 1) as status
@@ -2020,7 +2020,7 @@ insert into outputStream;
 
 <p style="word-wrap: break-word">This will returns 1 if voltage= 12.</p>
 
-<p><span id="example3" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE3</span></p>
+<p><span id="example-3" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 3</span></p>
 <pre><code>@info(name = 'query1')
 from userEventStream
 select userName, ifThenElse(password == 'admin', true, false) as passwordState
@@ -2056,7 +2056,7 @@ insert into outputStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select instanceOfBoolean(switchState) as state
 insert into barStream;
@@ -2064,7 +2064,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will return true if the value of switchState is true.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream
 select instanceOfBoolean(value) as state
 insert into barStream;
@@ -2107,7 +2107,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select convert(temp, 'double') as temp
 insert into barStream;
@@ -2115,7 +2115,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will convert fooStream temp value into 'double'.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream
 select convert(temp, 'int') as temp
 insert into barStream;
@@ -2150,7 +2150,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select instanceOfLong(value) as state
 insert into barStream;
@@ -2158,7 +2158,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will return true if the value field format is long ex : 56456l.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream
 select instanceOfLong(switchState) as state
 insert into barStream;
@@ -2201,7 +2201,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from TempStream
 select default(temp, 0.0) as temp, roomNum
 insert into StandardTempStream;
@@ -2236,7 +2236,7 @@ insert into StandardTempStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select coalesce('123', null, '789') as value
 insert into barStream;
@@ -2244,7 +2244,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will returns first null value 123.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream
 select coalesce(null, 76, 567) as value
 insert into barStream;
@@ -2252,7 +2252,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will returns first null value 76.</p>
 
-<p><span id="example3" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE3</span></p>
+<p><span id="example-3" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 3</span></p>
 <pre><code>from fooStream
 select coalesce(null, null, null) as value
 insert into barStream;
@@ -2287,7 +2287,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select instanceOfDouble(value) as state
 insert into barStream;
@@ -2295,7 +2295,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will return true if the value field format is double ex : 56.45.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream
 select instanceOfDouble(switchState) as state
 insert into barStream;
@@ -2311,7 +2311,7 @@ insert into barStream;
 </code></pre>
 
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select symbol as name, eventTimestamp() as eventTimestamp 
 insert into barStream;
@@ -2346,7 +2346,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select instanceOfFloat(value) as state
 insert into barStream;
@@ -2354,7 +2354,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will return true if the value field format is float ex : 56.45f.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream
 select instanceOfFloat(switchState) as state
 insert into barStream;
@@ -2389,7 +2389,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select instanceOfString(value) as state
 insert into barStream;
@@ -2397,7 +2397,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will return true if the value field format is string ex : 'test'.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream
 select instanceOfString(switchState) as state
 insert into barStream;
@@ -2432,7 +2432,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select instanceOfInteger(value) as state
 insert into barStream;
@@ -2440,7 +2440,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will return true if the value field format is integer.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream
 select instanceOfInteger(switchState) as state
 insert into barStream;
@@ -2475,7 +2475,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>@info(name = 'query1') from inputStream
 select maximum(price1, price2, price3) as max
 insert into outputStream;
@@ -2491,7 +2491,7 @@ insert into outputStream;
 </code></pre>
 
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select symbol as name, currentTimeMillis() as eventTimestamp 
 insert into barStream;
@@ -2542,7 +2542,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream#log(&quot;INFO&quot;, &quot;Sample Event :&quot;, true)
 select *
 insert into barStream;
@@ -2550,7 +2550,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will log as INFO with the message "Sample Event :" + fooStream:events.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from fooStream#log(&quot;Sample Event :&quot;, true)
 select *
 insert into barStream;
@@ -2558,7 +2558,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will logs with default log level as INFO.</p>
 
-<p><span id="example3" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE3</span></p>
+<p><span id="example-3" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 3</span></p>
 <pre><code>from fooStream#log(&quot;Sample Event :&quot;, fasle)
 select *
 insert into barStream;
@@ -2566,7 +2566,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will only log message.</p>
 
-<p><span id="example4" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE4</span></p>
+<p><span id="example-4" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 4</span></p>
 <pre><code>from fooStream#log(true)
 select *
 insert into barStream;
@@ -2574,7 +2574,7 @@ insert into barStream;
 
 <p style="word-wrap: break-word">This will only log fooStream:events.</p>
 
-<p><span id="example5" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE5</span></p>
+<p><span id="example-5" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 5</span></p>
 <pre><code>from fooStream#log(&quot;Sample Event :&quot;)
 select *
 insert into barStream;
@@ -2609,7 +2609,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from inputStream
 select stddev(temp) as stdTemp
 insert into outputStream;
@@ -2644,7 +2644,7 @@ insert into outputStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream#window.timeBatch(10 sec)
 select max(temp) as maxTemp
 insert into barStream;
@@ -2679,7 +2679,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from inputStream
 select minForever(temp) as max
 insert into outputStream;
@@ -2714,7 +2714,7 @@ insert into outputStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from inputStream
 select min(temp) as minTemp
 insert into outputStream;
@@ -2749,7 +2749,7 @@ insert into outputStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from inputStream
 select maxForever(temp) as max
 insert into outputStream;
@@ -2784,7 +2784,7 @@ insert into outputStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream
 select distinctcount(pageID) as count
 insert into barStream;
@@ -2800,7 +2800,7 @@ insert into barStream;
 </code></pre>
 
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream#window.timeBatch(10 sec)
 select count() as count
 insert into barStream;
@@ -2835,7 +2835,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from fooStream#window.timeBatch
  select avg(temp) as avgTemp
  insert into barStream;
@@ -2870,7 +2870,7 @@ insert into barStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from inputStream
 select sum(volume) as sumOfVolume
 insert into outputStream;
@@ -2921,7 +2921,7 @@ insert into outputStream;
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>from PolarStream#pol2Cart(theta, rho)
 select x, y 
 insert into outputStream ;
@@ -2929,7 +2929,7 @@ insert into outputStream ;
 
 <p style="word-wrap: break-word">This will return cartesian coordinates (4.99953024681082, 0.06853693328228748) for theta: 0.7854 and rho: 5.</p>
 
-<p><span id="example2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE2</span></p>
+<p><span id="example-2" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 2</span></p>
 <pre><code>from PolarStream#pol2Cart(theta, rho, 3.4)
 select x, y, z 
 insert into outputStream ;
@@ -2946,7 +2946,7 @@ insert into outputStream ;
 </code></pre>
 
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>@source(type='tcp', @map(type='passThrough'),
 define stream BarStream (symbol string, price float, volume long);
 </code></pre>
@@ -2981,7 +2981,7 @@ define stream BarStream (symbol string, price float, volume long);
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>@source(type='inMemory', @map(type='passThrough'),
 define stream BarStream (symbol string, price float, volume long)
 </code></pre>
@@ -2997,7 +2997,7 @@ define stream BarStream (symbol string, price float, volume long)
 </code></pre>
 
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>@sink(type='inMemory', @map(type='passThrough'),
 define stream BarStream (symbol string, price float, volume long);
 </code></pre>
@@ -3032,7 +3032,7 @@ define stream BarStream (symbol string, price float, volume long);
     </tr>
 </table></p>
 <p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
-<span id="example1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE1</span></p>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
 <pre><code>@sink(type='inMemory', @map(type='passThrough'),
 define stream BarStream (symbol string, price float, volume long)
 </code></pre>
@@ -3056,7 +3056,7 @@ define stream BarStream (symbol string, price float, volume long)
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../4.0.0-M48/" title="4.0.0-M48" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../4.0.0-M51/" title="4.0.0-M51" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -3065,19 +3065,19 @@ define stream BarStream (symbol string, price float, volume long)
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                4.0.0-M48
+                4.0.0-M51
               </span>
             </div>
           </a>
         
         
-          <a href="../4.0.0-M50/" title="4.0.0-M50" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../4.0.0-M53/" title="4.0.0-M53" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                4.0.0-M50
+                4.0.0-M53
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
