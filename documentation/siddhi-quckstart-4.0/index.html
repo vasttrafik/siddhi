@@ -755,13 +755,21 @@
 
 <p><strong>Note</strong>: You can create the Java project using any method you prefer. The required dependencies can be downloaded from <a href="http://maven.wso2.org/nexus/content/groups/wso2-public/org/wso2/siddhi/">here</a>.
 <em> Create a new Java class in the Maven project.
-</em> Define a stream definition as follows. The stream definition defines the format of the incoming events.
-  <code>java
-  String definition = "@config(async = 'true') define stream cseEventStream (symbol string, price float, volume long);";</code>
-* Define a Siddhi query as follows.
-  <code>java
-  String query = "@info(name = 'query1') from cseEventStream#window.timeBatch(500)  select symbol, sum(price) as price, sum(volume) as volume group by symbol insert into outputStream ;";</code>
-  This Siddhi query stores incoming events for 500 milliseconds, groups them by symbol and calculates the sum for price and volume. Then it inserts the results into a stream named <code>outputStream</code>.</p>
+</em> Define a stream definition as follows. The stream definition defines the format of the incoming events.</p>
+<pre><code class="java">  String definition = &quot;define stream cseEventStream (symbol string, price float, volume long);&quot;;
+</code></pre>
+
+<ul>
+<li>Define a Siddhi query as follows.</li>
+</ul>
+<pre><code class="java">  String query = &quot;@info(name = 'query1') &quot; +
+                 &quot;from cseEventStream#window.timeBatch(500)  &quot; +
+                 &quot;select symbol, sum(price) as price, sum(volume) as volume &quot; +
+                 &quot;group by symbol &quot; +
+                 &quot;insert into outputStream ;&quot;;
+</code></pre>
+
+<p>This Siddhi query stores incoming events for 500 milliseconds, groups them by symbol and calculates the sum for price and volume. Then it inserts the results into a stream named <code>outputStream</code>.</p>
 <h4 id="step-2-creating-siddhi-application-runtime">Step 2: Creating Siddhi Application Runtime</h4>
 <p>A Siddhi application is a self contained, valid set of stream definitions and queries. This step involves creating a runtime representation of a Siddhi application by combining the stream definition and the Siddhi query you created in Step 1.</p>
 <pre><code class="java">
