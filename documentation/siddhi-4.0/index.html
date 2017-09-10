@@ -367,6 +367,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#time-based-aggregation" title="Time based aggregation" class="md-nav__link">
+    Time based aggregation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-and-storing-time-based-aggregated-values" title="Calculating and storing time-based aggregated values" class="md-nav__link">
+    Calculating and storing time-based aggregated values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-aggregate-values" title="Retrieving aggregate values" class="md-nav__link">
+    Retrieving aggregate values
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#inbuilt-windows" title="Inbuilt windows" class="md-nav__link">
     Inbuilt windows
   </a>
@@ -1189,6 +1216,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M61/" title="4.0.0-M61" class="md-nav__link">
+      4.0.0-M61
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M62/" title="4.0.0-M62" class="md-nav__link">
+      4.0.0-M62
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1365,6 +1416,33 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-based-aggregation" title="Time based aggregation" class="md-nav__link">
+    Time based aggregation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-and-storing-time-based-aggregated-values" title="Calculating and storing time-based aggregated values" class="md-nav__link">
+    Calculating and storing time-based aggregated values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieving-aggregate-values" title="Retrieving aggregate values" class="md-nav__link">
+    Retrieving aggregate values
+  </a>
   
 </li>
         
@@ -2444,6 +2522,61 @@ insert into resultStream;
 </tr>
 </tbody>
 </table>
+<h4 id="time-based-aggregation">Time based aggregation</h4>
+<p>Time-based aggregation involves obtaining aggregate attribute values (i.e., sum, average, min, max etc.) for a specified time period.</p>
+<h5 id="calculating-and-storing-time-based-aggregated-values">Calculating and storing time-based aggregated values</h5>
+<p>This section explains how to write Siddhi queries to calculate aggregate values for specific time periods as required.</p>
+<p><strong>Syntax</strong></p>
+<pre><code class="sql">@store(type=&quot;&lt;DATABASE_TYPE&gt;&quot;)
+define aggregation &lt;aggregatorName&gt;
+from &lt;InputStreamName&gt;
+select &lt;attributeName&gt;, &lt;aggregate_function&gt;(attributeName) as &lt;attributeName&gt;, &lt;aggregate_function&gt;(attributeName) as &lt;attributeName&gt; ...
+    group by &lt;attributeName&gt;
+    aggregate by timestamp every &lt;time_period&gt;;
+</code></pre>
+
+<p>The above syntax includes the following:
+Item|Description
+---------|---------
+<code>@store</code>|This annotation is used to refer to the data source where the events for which aggregate values are to be calculated are stored.
+<code>define aggregation</code>|This specifies a unique name for the aggregation
+<code>group by</code>|The attribute by which the calculated aggregate values are grouped. Specifying an attribute to group by is optional. When an attribute is specified, the aggregate values are calculated for the required time periods per value for the specified attribute. If no attribute is specified, all the events are aggregated together.
+<code>aggregate by timestamp</code>|The time period for which the aggregate values are calculated.</p>
+<p><strong>Example</strong></p>
+<pre><code class="sql">@store(type=&quot;rdbms&quot;)
+define aggregation testAggregator
+from tradesStream
+select symbol, avg(price) as avgPrice, sum(price) as total
+    group by symbol
+    aggregate by timestamp every sec...year;
+</code></pre>
+
+<p>In this query, an aggregator named <code>testAggregator</code>calculates the average price and the sum of prices of the events that arrive at the <code>tradesStream</code> stream every second. These average and total are calculated per symbol, and in each second, the average and sum relevant for the last second, minute, hour, day, month, and year are output, and stored in the RDBMS database.</p>
+<h5 id="retrieving-aggregate-values">Retrieving aggregate values</h5>
+<p>This section explain how to retrieve aggregate values that are already calculated and persisted in the system.
+<strong>Syntax</strong></p>
+<pre><code class="sql">define stream `InputStreamName` (&lt;attributeName&gt; &lt;ATTRIBUTE_TYPE&gt;, &lt;attributeName&gt; &lt;ATTRIBUTE_TYPE&gt; ...);
+
+from InputStreamName as b join &lt;AGGREGATION_NAME&gt; as a
+on a.symbol == b.symbol 
+within &quot;&lt;START_TIME&gt;&quot;, &quot;&lt;END_TIME&gt;&quot; 
+per &quot;&lt;TIME_PERIOD&gt;&quot; 
+select a.&lt;attributeName&gt;, a.&lt;attributeName&gt;, a.&lt;attributeName&gt; 
+insert into fooBar;
+</code></pre>
+
+<p><strong>Example</strong></p>
+<pre><code class="sql">define stream barStream (symbol string, value int);
+
+from barStream as b join testAggregator as a
+on a.symbol == b.symbol 
+within &quot;2014-02-15 00:00:00 +05:30&quot;, &quot;2014-03-16 00:00:00 +05:30&quot; 
+per &quot;days&quot; 
+select a.symbol, a.total, a.avgPrice 
+insert into fooBar;
+</code></pre>
+
+<p>This query performs a join to match events arriving at the <code>barStream</code> stream with the events calculated and persisted by the <code>testAggregator</code> aggregator. If the value for the <code>symbol</code> attribute of an event that arrives in an input stream is the same as that of an event persisted by the aggregator, the aggregated values already calculated for it for the time period between <code>2014-02-15 00:00:00 +05:30</code> and <code>2014-03-16 00:00:00 +05:30</code> are retrieved. The aggregate values (i.e., average and the total in this scenario) for the last day is retrieved. The output events are inserted into the <code>FooBar</code> output stream.</p>
 <h4 id="inbuilt-windows">Inbuilt windows</h4>
 <p>WSO2 Siddhi supports the following inbuilt windows.</p>
 <h5 id="time">time</h5>
