@@ -4,7 +4,23 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-09-10</lastmod>
+     <lastmod>2017-09-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/features/</loc>
+     <lastmod>2017-09-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/documentation/siddhi-quckstart-4.0/</loc>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,14 +28,14 @@
     
         
     <url>
-     <loc>/documentation/siddhi-quckstart-4.0/</loc>
-     <lastmod>2017-09-10</lastmod>
+     <loc>/documentation/user-guide/</loc>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/documentation/siddhi-4.0/</loc>
-     <lastmod>2017-09-10</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -28,7 +44,7 @@
     
     <url>
      <loc>/extensions/</loc>
-     <lastmod>2017-09-10</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,170 +52,26 @@
     
         
     <url>
-     <loc>/api/4.0.0-M35/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M36/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M37/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M38/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M39/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M40/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M41/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M42/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M43/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M44/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M45/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M46/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M47/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M48/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M49/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M50/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M51/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M52/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M53/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M54/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M55/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M56/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M57/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M58/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/api/4.0.0-M59/</loc>
-     <lastmod>2017-09-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>/api/4.0.0-M60/</loc>
-     <lastmod>2017-09-10</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/4.0.0-M61/</loc>
-     <lastmod>2017-09-10</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/4.0.0-M62/</loc>
-     <lastmod>2017-09-10</lastmod>
+     <lastmod>2017-09-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/api/4.0.0-M69/</loc>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -208,7 +80,7 @@
     
     <url>
      <loc>/license/</loc>
-     <lastmod>2017-09-10</lastmod>
+     <lastmod>2017-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
