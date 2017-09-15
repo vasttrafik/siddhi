@@ -244,8 +244,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-siddhi-streaming-sql" title="Introduction to Siddhi Streaming SQL" class="md-nav__link">
-    Introduction to Siddhi Streaming SQL
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
@@ -267,6 +267,13 @@
         <li class="md-nav__item">
   <a href="#sinks" title="Sinks" class="md-nav__link">
     Sinks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query" title="Query" class="md-nav__link">
+    Query
   </a>
   
 </li>
@@ -1069,8 +1076,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction-to-siddhi-streaming-sql" title="Introduction to Siddhi Streaming SQL" class="md-nav__link">
-    Introduction to Siddhi Streaming SQL
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
@@ -1092,6 +1099,13 @@
         <li class="md-nav__item">
   <a href="#sinks" title="Sinks" class="md-nav__link">
     Sinks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query" title="Query" class="md-nav__link">
+    Query
   </a>
   
 </li>
@@ -1731,9 +1745,12 @@
                 
                 
                 <h1 id="siddhi-streaming-sql-guide-40">Siddhi Streaming SQL Guide 4.0</h1>
-<h2 id="introduction-to-siddhi-streaming-sql">Introduction to Siddhi Streaming SQL</h2>
-<p>Siddhi Streaming SQL is designed to process event streams in streaming manner and to detect complex event occurrences 
-and notify them in real-time. The following table provides definitions of a few terms in the Siddhi Streaming SQL Language.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Siddhi Streaming SQL is designed to process event streams in streaming manner, detect complex event occurrences, 
+and notify them in real-time. </p>
+<p>The flowing diagram depicts how <strong>event flows</strong> within the some of the key Siddhi Streaming SQL elements.</p>
+<p><img alt="Event Flow" src="../../images/event-flow.png?raw=true" title="Event Flow" /></p>
+<p>Below table provides brief description of a few key elements in the Siddhi Streaming SQL Language.</p>
 <table>
 <thead>
 <tr>
@@ -1744,7 +1761,7 @@ and notify them in real-time. The following table provides definitions of a few 
 <tbody>
 <tr>
 <td>Stream</td>
-<td>A logical series of events ordered in time with a uniquely identifiable name and set of defined typed attributes defining its schema</td>
+<td>A logical series of events ordered in time with a uniquely identifiable name and set of defined typed attributes defining it's schema</td>
 </tr>
 <tr>
 <td>Event</td>
@@ -1756,7 +1773,7 @@ and notify them in real-time. The following table provides definitions of a few 
 </tr>
 <tr>
 <td>Query</td>
-<td>A logical construct that generates events to streams or tables by combining existing streams and/or tables. A query consumes one or more input streams and zero or one table, to process events in a streaming manner, processed output events publishes them to stream or tables for further processing or notifications.</td>
+<td>A logical construct that process events in a streaming manner by combining existing streams and/or tables, and generates events to output stream or table. A query consumes one or more input streams and zero or one table, to process events in a streaming manner, processed output events publishes them to stream or tables for further processing or notifications.</td>
 </tr>
 <tr>
 <td>Source</td>
@@ -1784,20 +1801,18 @@ and notify them in real-time. The following table provides definitions of a few 
 </tr>
 </tbody>
 </table>
-<p>The flowing diagram depicts how <strong>event flows</strong> within the Siddhi Streaming SQL elements.</p>
-<p><img alt="Event Flow" src="../../images/event-flow.png?raw=true" title="Event Flow" /></p>
 <h2 id="streams">Streams</h2>
-<p>The stream definition defines the event stream schema. An event stream definition contains a unique name and a 
-set of attributes assigned specific types, with uniquely identifiable names within the stream.</p>
-<p><strong>Purpose</strong>
-To define the schema based on which events are selected to be processed in the execution plan to which the event stream
- is attached.</p>
+<p>Streams is a logical series of events ordered in time. It's schema is defined via the <strong>stream definition</strong>.
+A stream definition contains a unique name and a set of attributes with specific types and uniquely identifiable names within the stream.
+All events of a particular Stream will have the same schema (i.e. have the same attributes in the same order). </p>
+<p><strong>Purpose</strong></p>
+<p>By defining a schema it unifies common types of events together. This enables them to be processed at queries using their defined attributes in a streaming manner, and let sinks and sources to map events to and from various data formats.</p>
 <p><strong>Syntax</strong></p>
-<p>The following is the syntax of a query that defines a new event stream.</p>
-<pre><code class="sql">`define stream &lt;stream name&gt; (&lt;attribute name&gt; &lt;attribute type&gt;, &lt;attribute name&gt; &lt;attribute type&gt;, ... );`
+<p>The following is the syntax for defining a new stream.</p>
+<pre><code class="sql">define stream &lt;stream name&gt; (&lt;attribute name&gt; &lt;attribute type&gt;, &lt;attribute name&gt; &lt;attribute type&gt;, ... );
 </code></pre>
 
-<p>The following parameters are configured in an event stream definition.</p>
+<p>The following parameters are configured in a stream definition.</p>
 <table>
 <thead>
 <tr>
@@ -1808,82 +1823,189 @@ To define the schema based on which events are selected to be processed in the e
 <tbody>
 <tr>
 <td><code>stream name</code></td>
-<td>The name of the event stream to be created.</td>
+<td>The name of the stream created. (as a convention <code>PascalCase</code> is used for stream name)</td>
 </tr>
 <tr>
-<td><code>&lt;attribute name&gt; &lt;attribute type&gt;</code></td>
-<td>The schema of an event stream is defined by adding the name and the type of each attribute as a value pair. <br> <em><code>attribute name</code>: A unique name for the attribute. </br> <br> </em><code>attribute type</code>: The data type of the attribute value. This can be <code>STRING</code>, <code>INT</code>, <code>LONG</code>, <code>DOUBLE</code>, <code>FLOAT</code> or <code>BOOLEAN</code>.</br></td>
+<td><code>attribute name</code></td>
+<td>The schema of an stream is defined by its attributes by uniquely identifiable attribute names (as a convention <code>camalCase</code> is used for attribute names)</td>
+</tr>
+<tr>
+<td><code>attribute type</code></td>
+<td>The type of each attribute defined in the schema. <br/> This can be <code>STRING</code>, <code>INT</code>, <code>LONG</code>, <code>DOUBLE</code>, <code>FLOAT</code>, <code>BOOL</code> or <code>OBJECT</code>.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<pre><code class="sql">`define stream TempStream (deviceID long, roomNo int, temp double);`
-The above creates an event stream named TempStream with the following attributes.
+<pre><code class="sql">define stream TempStream (deviceID long, roomNo int, temp double);
 </code></pre>
 
+<p>The above creates a stream named <code>TempStream</code> with the following attributes.</p>
 <ul>
-<li><code>deviceID</code> of the <code>long</code> attribute type</li>
-<li><code>roomNo</code> of the <code>int</code> attribute type</li>
-<li><code>temp</code> of the <code>double</code> attribute type</li>
+<li><code>deviceID</code> of type <code>long</code></li>
+<li><code>roomNo</code> of type <code>int</code> </li>
+<li><code>temp</code> of type <code>double</code> </li>
 </ul>
 <h2 id="sources">Sources</h2>
-<p>Event sources allow you to receive events to WSO2 SP via a selected transport and in a selected format.
-WSO2 SP currently supports the following source types:
-<em> File
-</em> HTTP
-<em> JMS
-</em> Kafka
-<em> MQTT
-</em> RabbitMQ
-<em> TCP
-</em> WSO2Event</p>
-<p><strong>Syntax</strong>
-To add an event source configuration to a Siddhi application, add the <code>@source</code> annotation and enter the required values for parameters. The source syntax is as follows:</p>
-<pre><code class="sql">@source(type='source_type', static_option_key='static_option_value', dynamic_option_key='{{dynamic_option_value}}',
-    @map(type='map_type', static_option_key='static_option_value', dynamic_option_key='{{dynamic_option_value}}',
-        @attributes( 'attribute_mapping_1', 'attribute_mapping_N')
+<p>Sources allow you to receive events with various data formats via multiple transports into streams for processing.</p>
+<p>Source let you define a mapping to convert the incoming event from its native data format (such as <code>JSON</code>, <code>TEXT</code>, <code>XML</code>, etc) 
+to Siddhi Event, when such mapping is not customised it assumes that the arriving events adhere to a predefined format.</p>
+<p><strong>Purpose</strong></p>
+<p>Source provides a way to Siddhi consume events from external systems and map the events to adhere to the associated stream. </p>
+<p><strong>Syntax</strong></p>
+<p>To configure a stream to consume events via a source, add the source configuration to a stream definition by adding the <code>@source</code> annotation and the required parameter values. 
+The source syntax is as follows:</p>
+<pre><code class="sql">@source(type='source_type', static.option.key1='static_option_value1', static.option.keyN='static_option_valueN',
+    @map(type='map_type', static.option_key1='static_option_value1', static.option.keyN='static_option_valueN',
+        @attributes( attributeN='attribute_mapping_N', attribute1='attribute_mapping_1')
     )
 )
 define stream stream_name (attribute1 Type1, attributeN TypeN);
 </code></pre>
 
-<p>In the <code>type</code> parameter, enter the transport via which the source recives events. The other parameters to be configured depends on the transport selected. For detailed information about the parameters to be configured for each transport, see <a href="https://docs.wso2.com/display/SP400/Configuring+Transport+Types+for+Receiving+Events">Configuring Transport Types for Receiving Events</a>.</p>
-<p><strong>Example</strong>
-The following query receives events via the HTTP transport, and processes them in the <code>InputStream</code> stream. The events are received in the <code>text</code> format, and basic authentication is carried out for each event.</p>
-<pre><code class="sql">@source(type='http', @map(type='text'),
-receiver.url='http://localhost:8080/streamName', is.basic.auth.enabled='true')
-define stream inputStream (name string, age int, country string);
+<p><strong>Source</strong></p>
+<p>The <code>type</code> parameter of <code>@source</code> defines the source type that receives events. The other parameters to be configured depends on the source selected, some of those can also be optional values. For detailed information about the parameters refer the appropriate source documentation.</p>
+<p>Some of the supports source types are:</p>
+<ul>
+<li>TCP</li>
+<li>Kafka</li>
+<li>MQTT</li>
+<li>RabbitMQ</li>
+<li>In-Memory</li>
+<li>File</li>
+<li>HTTP</li>
+<li>JMS</li>
+<li>E-mail</li>
+<li>WSO2Event</li>
+</ul>
+<p><strong>Source Mapper</strong></p>
+<p>Each <code>@source</code> will have a mapping denoted by <code>@map</code> that converts the incoming message format to Siddhi event.</p>
+<p>The <code>type</code> parameter of <code>@map</code> defines the map type that's responsible of mapping the data. The other parameters to be configured depends on the mapper selected, some of those can also be optional values. For detailed information about the parameters refer the appropriate mapper documentation.</p>
+<p><strong>When <code>@map</code> is not provided <code>@map(type='passThrough')</code> will be used as default</strong>. This can be used when source consumes Siddhi events and when it does not need any mappings.</p>
+<p><strong>Map Attributes</strong></p>
+<p><code>@attributes</code> is an optional parameter of <code>@map</code> to define custom mapping. When <code>@attributes</code> is not provided each mapper
+assumes that the incoming events will be adhere to it's own expected default data format. By defining <code>@attributes</code> you 
+can configure mappers to extract data from the incoming message selectively and assign then to attributes. </p>
+<p>There are two ways you can configure <code>@attributes</code>. </p>
+<ol>
+<li>By defining attributes as keys and mapping content as value in the following format: <br/>
+<code>@attributes( attributeN='mapping_N', attribute1='mapping_1')</code> </li>
+<li>By defining all attributes' mapping content in the same order as how the attributes are defined in the stream definition, such as: <br/>
+<code>@attributes( 'mapping_1', 'mapping_N')</code> </li>
+</ol>
+<p>Some of the supports source mappings are:</p>
+<ul>
+<li>JSON</li>
+<li>XML</li>
+<li>Binary</li>
+<li>Text</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following query receives events via the HTTP source on JSON data format, and passes them in the <code>InputStream</code> stream for processing. 
+Here the HTTP source is configured to receive events on all network interfaces on port <code>8080</code> on the context <code>foo</code>, and 
+its protected by basic authentication.</p>
+<pre><code class="sql">@source(type='http', receiver.url='http://0.0.0.0:8080/foo', is.basic.auth.enabled='true', 
+  @map(type='json'))
+define stream InputStream (name string, age int, country string);
 </code></pre>
 
 <h2 id="sinks">Sinks</h2>
-<p>Sinks allow you to publish events from WSO2 SP via a selected transport and in a selected format.
-WSO2 SP currently supports the following source types:
-<em> File
-</em> HTTP
-<em> JMS
-</em> Kafka
-<em> MQTT
-</em> RabbitMQ
-<em> TCP
-</em> WSO2Event</p>
-<p><strong>Syntax</strong>
-To add an event source configuration to a Siddhi application, add the <code>@sink</code> annotation and enter the required values for parameters. The sink syntax is as follows:</p>
-<pre><code class="sql">@sink(type='sink_type', static_option_key='static_option_value', dynamic_option_key='{{dynamic_option_value}}',
-    @map(type='map_type', static_option_key='static_option_value', dynamic_option_key='{{dynamic_option_value}}',
-        @payload( 'payload_mapping')
+<p>Sources allow you to publish events that flow through streams with various data formats and via multiple transports to external endpoints.</p>
+<p>Sink let you define a mapping to convert the Siddhi event to appropriate output data format (such as <code>JSON</code>, <code>TEXT</code>, <code>XML</code>, etc), 
+when such mapping is not customised it converts the events to its default data format and publishes the event.</p>
+<p><strong>Purpose</strong></p>
+<p>Sink provides a way to consume events generated by Siddhi by external systems in their prefixed data format. </p>
+<p><strong>Syntax</strong></p>
+<p>To configure a stream to publish events via a sink, add the sink configuration to a stream definition by adding the <code>@sink</code> 
+annotation and the required parameter values. 
+The sink syntax is as follows:</p>
+<pre><code class="sql">@sink(type='sink_type', static_option_key1='static_option_value1', dynamic_option_key1='{{dynamic_option_value1}}',
+    @map(type='map_type', static_option_key1='static_option_value1', dynamic_option_key1='{{dynamic_option_value1}}',
+        @payload('payload_mapping')
     )
 )
 define stream stream_name (attribute1 Type1, attributeN TypeN);
 </code></pre>
 
-<p>In the <code>type</code> parameter, enter the transport via which the sink publishes events. The other parameters to be configured depends on the transport selected. For detailed information about the parameters to be configured for each transport, see [Configuring Transports for Publishing Events] (https://docs.wso2.com/display/SP400/Configuring+Transports+for+Publishing+Events).</p>
-<p><strong>Example</strong>
-The event sink configured below publishes events from an event stream named <code>outputstream</code> to the <code>http://localhost:8005/endpoint/receiverName</code> URL with the <code>Accept</code> header. Basic authentication is enabled and <code>admin</code> is used as both the username and the password.</p>
-<pre><code class="sql">@sink(type='http', @map(type='text'),
-publisher.url='http://localhost:8005/endpoint/receiverName',method='POST',headers='Accept-Date:20/02/2017',basic.auth.username='admin',basic.auth.password='admin',basic.auth.enabled='true')
-define stream outputstream (name string,ang int, country string);
+<p>The Sink and Sink mapper properties that are categorised as <code>dynamic</code> have the ability to absorb attributes values from the Stream they are associated with. 
+This can be done by incorporating the attribute names in double curly braces as <code>{{...}}</code> when configuring the property value. 
+<code>'{{attribute1}}'</code>, <code>'This is {{attribute1}}'</code> and <code>{{attribute1}} &gt; {{attributeN}}</code> are some valid property values that dynamic properties can be configured with. 
+ Here the attribute names in the double curly braces will be replaced with event values during execution. </p>
+<p><strong>Sink</strong></p>
+<p>The <code>type</code> parameter of <code>@sink</code> defines the sink type that publishes the events. The other parameters to be configured depends on the sink selected, some of those can also be optional and some can be dynamic values. For detailed information about the parameters refer the appropriate sink documentation.</p>
+<p>Some of the supports sink types are:</p>
+<ul>
+<li>TCP</li>
+<li>Kafka</li>
+<li>E-mail</li>
+<li>MQTT</li>
+<li>RabbitMQ</li>
+<li>In-Memory</li>
+<li>File</li>
+<li>HTTP</li>
+<li>JMS</li>
+<li>WSO2Event</li>
+</ul>
+<p><strong>Sink Mapper</strong></p>
+<p>Each <code>@sink</code> will have a mapping denoted by <code>@map</code> that converts the Siddhi event to an outgoing message format.</p>
+<p>The <code>type</code> parameter of <code>@map</code> defines the map type that's responsible of mapping the data. The other parameters to be configured depends on the mapper selected, some of those can also be optional or dynamic values. For detailed information about the parameters refer the appropriate mapper documentation.</p>
+<p><strong>When <code>@map</code> is not provided <code>@map(type='passThrough')</code> will be used as default</strong>. This can be used when sink publishes Siddhi events and when it does not need any mappings.</p>
+<p><strong>Map Payload</strong></p>
+<p><code>@payload</code> is an optional parameter of <code>@map</code> to define custom mapping. When <code>@payload</code> is not provided each mapper
+maps the outgoing events to it's own default data format. By defining <code>@payload</code> you 
+can configure mappers to produce the output payload as of your choice using dynamic properties by selectively assigning the attributes on your preferred format. </p>
+<p>There are two ways you can configure <code>@payload</code>. </p>
+<ol>
+<li>Some mappers such as <code>XML</code>, <code>JSON</code>, and <code>Test</code> accepts only one output payload using the following format: <br/>
+<code>@payload( 'This is a test message from {{user}}.' )</code> </li>
+<li>Some mappers such <code>key-value</code> accepts series of mapping values defined as: <br/>
+<code>@attributes( key1='mapping_1', key2='user : {{user}}')</code> </li>
+</ol>
+<p>Some of the supports source mappings are:</p>
+<ul>
+<li>JSON</li>
+<li>XML</li>
+<li>Binary</li>
+<li>Text</li>
+<li>Key-value</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following query receives events via the HTTP source on JSON data format, and passes them in the <code>InputStream</code> stream for processing. 
+Here the HTTP source is configured to receive events on all network interfaces on port <code>8080</code> on the context <code>foo</code>, and 
+its protected by basic authentication.</p>
+<pre><code class="sql">@source(type='http', receiver.url='http://0.0.0.0:8080/foo', is.basic.auth.enabled='true', 
+  @map(type='json'))
+define stream inputStream (name string, age int, country string);
 </code></pre>
 
+<p>The following query publishes events from <code>OutputStream</code> via the HTTP Sink. Here the events mapped as default JSON payloads are sent to <code>http://localhost:8005/endpoint</code>
+ using <code>POST</code> method, <code>Accept</code> header, and basic authentication having <code>admin</code> as both the username and the password.</p>
+<pre><code class="sql">@sink(type='http', publisher.url='http://localhost:8005/endpoint', method='POST', headers='Accept-Date:20/02/2017', 
+  basic.auth.username='admin', basic.auth.password='admin', basic.auth.enabled='true',
+  @map(type='json'))
+define stream OutputStream (name string, ang int, country string);
+</code></pre>
+
+<h2 id="query">Query</h2>
+<p>Each Siddhi query can consume one or more streams with zero or one table, process the events in streaming fashion and generate a output event to a stream or modifies a table.</p>
+<p><strong>Purpose</strong></p>
+<p>Query enables you to perform Complex Event Processing and Stream Processing operations by processing incoming events one by one in order. </p>
+<p><strong>Syntax</strong></p>
+<p>Query contain an input section and an output section. Some also contain a projection section. A simple query with all three sections is as follows.</p>
+<pre><code class="sql">from &lt;input stream&gt; 
+select &lt;attribute name&gt;, &lt;attribute name&gt;, ...
+insert into &lt;output stream/table&gt;
+</code></pre>
+
+<p><strong>Example</strong></p>
+<p>Following simple query derives only the room temperature from the defined TempStream stream.</p>
+<pre><code class="sql">define stream TempStream (deviceID long, roomNo int, temp double);
+
+from TempStream 
+select roomNo, temp
+insert into RoomTempStream;
+</code></pre>
+
+<p><strong>Inferred Stream</strong>: Here the RoomTempStream is an inferred Stream, i.e.  RoomTempStream can be used as any other defined stream without explicitly defining its Stream Definition.  </p>
 <h2 id="filters">Filters</h2>
 <p>Filters are included in queries to filter information from input streams based on a specified condition.</p>
 <p><strong>Purpose</strong>
