@@ -232,8 +232,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use" title="How to use" class="md-nav__link">
-    How to use
+  <a href="#using-the-siddhi-in-wso2-stream-processor" title="Using the Siddhi in WSO2 Stream Processor" class="md-nav__link">
+    Using the Siddhi in WSO2 Stream Processor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-siddhi-as-a-java-library" title="Using Siddhi as a java library" class="md-nav__link">
+    Using Siddhi as a java library
   </a>
   
 </li>
@@ -350,6 +357,54 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M70/" title="4.0.0-M70" class="md-nav__link">
+      4.0.0-M70
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M71/" title="4.0.0-M71" class="md-nav__link">
+      4.0.0-M71
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M72/" title="4.0.0-M72" class="md-nav__link">
+      4.0.0-M72
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M73/" title="4.0.0-M73" class="md-nav__link">
+      4.0.0-M73
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -388,8 +443,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use" title="How to use" class="md-nav__link">
-    How to use
+  <a href="#using-the-siddhi-in-wso2-stream-processor" title="Using the Siddhi in WSO2 Stream Processor" class="md-nav__link">
+    Using the Siddhi in WSO2 Stream Processor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-siddhi-as-a-java-library" title="Using Siddhi as a java library" class="md-nav__link">
+    Using Siddhi as a java library
   </a>
   
 </li>
@@ -417,8 +479,7 @@
                 
                 
                 <h1 id="user-guide">User Guide</h1>
-<h2 id="how-to-use">How to use</h2>
-<p><strong>Using the Siddhi in <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a></strong></p>
+<h2 id="using-the-siddhi-in-wso2-stream-processor"><strong>Using the Siddhi in <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a></strong></h2>
 <ul>
 <li>
 <p>You can use Siddhi in the latest <a target="_blank" href="https://github.com/wso2/product-sp/releases">WSO2 Stream Processor</a> that is a part of <a target="_blank" href="http://wso2.com/analytics?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">WSO2 Analytics</a> offering, with editor, debugger and simulation support. </p>
@@ -430,9 +491,9 @@
 <p>Refer the <a target="_blank" href="https://docs.wso2.com/display/SP400/Quick+Start+Guide">WSO2 SP Quick Start Guide</a> for more information.</p>
 </li>
 </ul>
-<p><strong>Using Siddhi as a <a target="_blank" href="https://wso2.github.io/siddhi/documentation/siddhi-quckstart-4.0/#using-siddhi-as-a-java-library">java library</a></strong></p>
+<h2 id="using-siddhi-as-a-java-library"><strong>Using Siddhi as a <a target="_blank" href="https://wso2.github.io/siddhi/documentation/siddhi-quckstart-4.0/#using-siddhi-as-a-java-library">java library</a></strong></h2>
 <ul>
-<li>To embed Siddhi as a java library in your project add the following Siddhi libraries as dependencies.</li>
+<li>To embed Siddhi as a java library in your project add the following Siddhi libraries as maven dependencies to the <code>pom.xml</code> file.</li>
 </ul>
 <pre><code class="xml">    &lt;dependency&gt;
       &lt;groupId&gt;org.wso2.siddhi&lt;/groupId&gt;
@@ -454,6 +515,21 @@
       &lt;artifactId&gt;siddhi-annotations&lt;/artifactId&gt;
       &lt;version&gt;4.x.x&lt;/version&gt;
     &lt;/dependency&gt;    
+</code></pre>
+
+<p>Add the following repository configuration to the same file.</p>
+<pre><code class="xml">   &lt;repositories&gt;
+     &lt;repository&gt;
+         &lt;id&gt;wso2.releases&lt;/id&gt;
+         &lt;name&gt;WSO2 Repository&lt;/name&gt;
+         &lt;url&gt;http://maven.wso2.org/nexus/content/repositories/releases/&lt;/url&gt;
+         &lt;releases&gt;
+             &lt;enabled&gt;true&lt;/enabled&gt;
+             &lt;updatePolicy&gt;daily&lt;/updatePolicy&gt;
+             &lt;checksumPolicy&gt;ignore&lt;/checksumPolicy&gt;
+         &lt;/releases&gt;
+     &lt;/repository&gt;
+   &lt;/repositories&gt;
 </code></pre>
 
 <ul>

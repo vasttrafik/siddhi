@@ -244,6 +244,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#introduction-to-siddhi-streaming-sql" title="Introduction to Siddhi Streaming SQL" class="md-nav__link">
+    Introduction to Siddhi Streaming SQL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#streams" title="Streams" class="md-nav__link">
     Streams
   </a>
@@ -976,6 +983,54 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M70/" title="4.0.0-M70" class="md-nav__link">
+      4.0.0-M70
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M71/" title="4.0.0-M71" class="md-nav__link">
+      4.0.0-M71
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M72/" title="4.0.0-M72" class="md-nav__link">
+      4.0.0-M72
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M73/" title="4.0.0-M73" class="md-nav__link">
+      4.0.0-M73
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1012,6 +1067,13 @@
   
     <label class="md-nav__title" for="toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-siddhi-streaming-sql" title="Introduction to Siddhi Streaming SQL" class="md-nav__link">
+    Introduction to Siddhi Streaming SQL
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#streams" title="Streams" class="md-nav__link">
@@ -1668,7 +1730,62 @@
               
                 
                 
-                <h1 id="siddhi-query-language-guide-40">Siddhi Query Language Guide 4.0</h1>
+                <h1 id="siddhi-streaming-sql-guide-40">Siddhi Streaming SQL Guide 4.0</h1>
+<h2 id="introduction-to-siddhi-streaming-sql">Introduction to Siddhi Streaming SQL</h2>
+<p>Siddhi Streaming SQL is designed to process event streams in streaming manner and to detect complex event occurrences 
+and notify them in real-time. The following table provides definitions of a few terms in the Siddhi Streaming SQL Language.</p>
+<table>
+<thead>
+<tr>
+<th>Elements</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stream</td>
+<td>A logical series of events ordered in time with a uniquely identifiable name and set of defined typed attributes defining its schema</td>
+</tr>
+<tr>
+<td>Event</td>
+<td>An event is associated with only one stream, and all events of that stream have an identical set of attributes assigned specific types (or the same schema). An event contains a timestamp and the attribute values according to the schema.</td>
+</tr>
+<tr>
+<td>Table</td>
+<td>A structured representation of stored data with defined schema, allowing stored data backed by <code>In-Memory</code>, <code>RDBMs</code>, etc to be accessed and manipulated at runtime.</td>
+</tr>
+<tr>
+<td>Query</td>
+<td>A logical construct that generates events to streams or tables by combining existing streams and/or tables. A query consumes one or more input streams and zero or one table, to process events in a streaming manner, processed output events publishes them to stream or tables for further processing or notifications.</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>A contracts that consumes data from external sources (such as <code>TCP</code>, <code>Kafka</code>, <code>HTTP</code>, etc), converts it's data format (such as <code>XML</code>, <code>JSON</code>, <code>binary</code>, etc) to Siddhi event, and passes that to a Stream for processing.</td>
+</tr>
+<tr>
+<td>Sink</td>
+<td>A contracts that takes events arriving at a Stream, map them to a predefined data format (such as <code>XML</code>, <code>JSON</code>, <code>binary</code>, etc), and publish them to external endpoints (such as <code>E-mail</code>, <code>TCP</code>, <code>Kafka</code>, <code>HTTP</code>, etc).</td>
+</tr>
+<tr>
+<td>Input Handler</td>
+<td>A mechanism to programmatically inject events in to Streams.</td>
+</tr>
+<tr>
+<td>Stream/Query Callback</td>
+<td>A mechanism to programmatically consumes output events at Streams and Queries.</td>
+</tr>
+<tr>
+<td>Partition</td>
+<td>A logical container that processes a queries based on a pre-defined rule of separation. Here for each partition key a separate instance of queries will be generated to achieve isolation.</td>
+</tr>
+<tr>
+<td>Inner Stream</td>
+<td>A positionable stream that connects portioned queries to preserve partition isolation.</td>
+</tr>
+</tbody>
+</table>
+<p>The flowing diagram depicts how <strong>event flows</strong> within the Siddhi Streaming SQL elements.</p>
+<p><img alt="Event Flow" src="../../images/event-flow.png?raw=true" title="Event Flow" /></p>
 <h2 id="streams">Streams</h2>
 <p>The stream definition defines the event stream schema. An event stream definition contains a unique name and a 
 set of attributes assigned specific types, with uniquely identifiable names within the stream.</p>

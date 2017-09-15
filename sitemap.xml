@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/features/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +20,7 @@
     
     <url>
      <loc>/documentation/siddhi-quckstart-4.0/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -29,13 +29,13 @@
         
     <url>
      <loc>/documentation/user-guide/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/documentation/siddhi-4.0/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -44,7 +44,7 @@
     
     <url>
      <loc>/extensions/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -53,25 +53,49 @@
         
     <url>
      <loc>/api/4.0.0-M60/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/4.0.0-M61/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/4.0.0-M62/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/4.0.0-M69/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/api/4.0.0-M70/</loc>
+     <lastmod>2017-09-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/api/4.0.0-M71/</loc>
+     <lastmod>2017-09-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/api/4.0.0-M72/</loc>
+     <lastmod>2017-09-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/api/4.0.0-M73/</loc>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -80,7 +104,7 @@
     
     <url>
      <loc>/license/</loc>
-     <lastmod>2017-09-12</lastmod>
+     <lastmod>2017-09-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
