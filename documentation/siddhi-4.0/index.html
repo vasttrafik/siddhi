@@ -18,7 +18,7 @@
       
         <link rel="shortcut icon" href="../../images/favicon.ico">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.0">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.3">
     
     
       
@@ -29,7 +29,7 @@
       <script src="../../assets/javascripts/modernizr-e826f8942a.js"></script>
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application-b6a6d08807.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application-9011e2d3f8.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-23f75ab9c7.palette.css">
       
@@ -152,6 +152,7 @@
 </header>
     
     <div class="md-container">
+      
       
       
       <main class="md-main">
@@ -904,6 +905,18 @@
   <li class="md-nav__item">
     <a href="../../api/4.0.0-M79/" title="4.0.0-M79" class="md-nav__link">
       4.0.0-M79
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../api/4.0.0-M103/" title="4.0.0-M103" class="md-nav__link">
+      4.0.0-M103
     </a>
   </li>
 
@@ -2878,7 +2891,7 @@ in the syntax. To understand more refer <a href="http://127.0.0.1:8000/documenta
 
 
 <h3 id="in">In<a class="headerlink" href="#in" title="Permanent link">&para;</a></h3>
-<p>This allows the stream to check if the expected value exists in the table as part of a conditional operation.</p>
+<p>This allows the stream to check whether the expected value exists in the table as a part of a conditional operation.</p>
 <p><strong>Syntax</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="o">&lt;</span><span class="k">input</span> <span class="n">stream</span><span class="o">&gt;</span><span class="p">[</span><span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="k">in</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span><span class="p">]</span>
 <span class="k">select</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span>
@@ -2900,15 +2913,15 @@ When constructing the <code>condition</code>, the table attribute must be always
 
 
 <h2 id="incremental-aggregation">Incremental Aggregation<a class="headerlink" href="#incremental-aggregation" title="Permanent link">&para;</a></h2>
-<p>Incremental aggregation let you obtaining aggregates in an incremental manner for a specified set of time periods.</p>
-<p>This not only let you calculate aggregations with varies time granularity but also let you access them in an interactive
- manner for reports, dashboards, and for further processing. It's schema is defined via the <strong>aggregation definition</strong>.</p>
+<p>Incremental aggregation allows you to obtain aggregates in an incremental manner for a specified set of time periods.</p>
+<p>This not only allows you calculate aggregations with varied time granularity, but also allows you access them in an interactive
+ manner for reports, dashboards, and for further processing. Its schema is defined via the <strong>aggregation definition</strong>.</p>
 <p><strong>Purpose</strong></p>
 <p>Incremental aggregation allows you to retrieve the aggregate value for different time durations. 
 That is, it allows you to obtain aggregates such as <code>sum</code>, <code>count</code>, <code>avg</code>, <code>min</code>, <code>max</code>, and <code>count</code>) 
 of stream attributes for durations such as <code>sec</code>, <code>min</code>, <code>hour</code>, etc. </p>
-<p>This is of considerable importance in many analytics scenarios since aggregate values are often needed for several time periods. 
-Furthermore, this ensures that the aggregations are not lost due to unexpected system failures, as the aggregates can be stored in different persistence <code>stores</code>.</p>
+<p>This is of considerable importance in many Analytics scenarios because aggregate values are often needed for several time periods. 
+Furthermore, this ensures that the aggregations are not lost due to unexpected system failures because aggregates can be stored in different persistence <code>stores</code>.</p>
 <p><strong>Syntax</strong></p>
 <div class="codehilite"><pre><span></span><span class="o">@</span><span class="n">store</span><span class="p">(</span><span class="k">type</span><span class="o">=</span><span class="ss">&quot;&lt;store type&gt;&quot;</span><span class="p">,</span> <span class="p">...)</span>
 <span class="n">define</span> <span class="n">aggregation</span> <span class="o">&lt;</span><span class="n">aggregator</span> <span class="n">name</span><span class="o">&gt;</span>
@@ -2930,11 +2943,11 @@ Furthermore, this ensures that the aggregations are not lost due to unexpected s
 <tbody>
 <tr>
 <td><code>@store</code></td>
-<td>This annotation is used to refer to the data store where the calculated <br/>aggregate results will be stored. This annotation is optional and when <br/>no annotation is provided the data will be sored in the <code>in-memory</code> store.</td>
+<td>This annotation is used to refer to the data store where the calculated <br/>aggregate results are stored. This annotation is optional. When <br/>no annotation is provided, the data is stored in the <code>in-memory</code> store.</td>
 </tr>
 <tr>
 <td><code>&lt;aggregator name&gt;</code></td>
-<td>Specifies a unique name for the aggregation such that it can be referred <br/>when accessing aggregate results.</td>
+<td>This specifies a unique name for the aggregation so that it can be referred <br/>when accessing aggregate results.</td>
 </tr>
 <tr>
 <td><code>&lt;input stream&gt;</code></td>
@@ -2942,20 +2955,20 @@ Furthermore, this ensures that the aggregations are not lost due to unexpected s
 </tr>
 <tr>
 <td><code>group by &lt;attribute name&gt;</code></td>
-<td>The <code>group by</code> clause is optional. If it's given the aggregate values <br/>would be calculated, per each <code>group by</code> attribute, and otherwise all the<br/> events would be aggregated together.</td>
+<td>The <code>group by</code> clause is optional. If it is included in a Siddhi application, aggregate values <br/> are calculated per each <code>group by</code> attribute. If it is not used, all the<br/> events are aggregated together.</td>
 </tr>
 <tr>
 <td><code>by &lt;timestamp attribute&gt;</code></td>
-<td>This clause is optional. This defined the attribute that should be used as<br/> the timestamp if this is not provided the event time will be used by default.<br/> The timestamp could be given as either a string or long value. If it's a <code>long</code>,<br/> the unix timestamp in milliseconds is expected (e.g. <code>1496289950000</code>). If it's <br/>a <code>string</code> the supported formats are <code>&lt;yyyy&gt;-&lt;MM&gt;-&lt;dd&gt; &lt;HH&gt;:&lt;mm&gt;:&lt;ss&gt;</code> <br/>(if time is in GMT) and  <code>&lt;yyyy&gt;-&lt;MM&gt;-&lt;dd&gt; &lt;HH&gt;:&lt;mm&gt;:&lt;ss&gt; &lt;Z&gt;</code> (if time is <br/>not in GMT), here the ISO 8601 UTC offset must be provided for <code>&lt;Z&gt;</code> <br/>(ex. <code>+05:30</code>, <code>-11:00</code>).</td>
+<td>This clause is optional. This defines the attribute that should be used as<br/> the timestamp. If this clause is not used, the event time is used by default.<br/> The timestamp could be given as either a <code>string</code> or a <code>long</code> value. If it is a <code>long</code> value,<br/> the unix timestamp in milliseconds is expected (e.g. <code>1496289950000</code>). If it is <br/>a <code>string</code> value, the supported formats are <code>&lt;yyyy&gt;-&lt;MM&gt;-&lt;dd&gt; &lt;HH&gt;:&lt;mm&gt;:&lt;ss&gt;</code> <br/>(if time is in GMT) and  <code>&lt;yyyy&gt;-&lt;MM&gt;-&lt;dd&gt; &lt;HH&gt;:&lt;mm&gt;:&lt;ss&gt; &lt;Z&gt;</code> (if time is <br/>not in GMT), here the ISO 8601 UTC offset must be provided for <code>&lt;Z&gt;</code> .<br/>(e.g., <code>+05:30</code>, <code>-11:00</code>).</td>
 </tr>
 <tr>
 <td><code>&lt;time periods&gt;</code></td>
-<td>This depicts the aggregation period. This can be defined either as a range <br/>such as <code>evey sec ... year</code> defining that it should process all time <br/>granularities form second to year, or as comma separated values such as <br/> <code>every sec, hour, month</code>. Aggregation supports <code>second</code>, <code>minute</code>, <code>hour</code>, <br/><code>day</code>, <code>month</code> and <code>year</code> as its time granularity levels.</td>
+<td>When the aggregation period is given as <code>every sec, hour, month</code>, the aggregate values are calculated per second, per hour as well as per year.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Example</strong></p>
-<p>Siddhi App defining <code>TradeAggregation</code> to calculate  average and sum of <code>price</code> from <code>TradeStream</code> stream every second to year time granularities.</p>
+<p>This Siddhi Application defines an aggregation named <code>TradeAggregation</code> to calculate the average and sum for the <code>price</code> attribute of events arriving at the <code>TradeStream</code> stream. These aggregates are calculated per every time granularity in the range second-year.</p>
 <div class="codehilite"><pre><span></span><span class="n">define</span> <span class="n">stream</span> <span class="n">TradeStream</span> <span class="p">(</span><span class="n">symbol</span> <span class="n">string</span><span class="p">,</span> <span class="n">price</span> <span class="n">double</span><span class="p">,</span> <span class="n">volume</span> <span class="n">long</span><span class="p">,</span> <span class="k">timestamp</span> <span class="n">long</span><span class="p">);</span>
 
 <span class="n">define</span> <span class="n">aggregation</span> <span class="n">TradeAggregation</span>
@@ -2967,13 +2980,13 @@ Furthermore, this ensures that the aggregations are not lost due to unexpected s
 
 
 <h3 id="join-aggregation">Join (Aggregation)<a class="headerlink" href="#join-aggregation" title="Permanent link">&para;</a></h3>
-<p>Join allow a stream to retrieve calculated aggregate values from the aggregation. </p>
+<p>This allows a stream to retrieve calculated aggregate values from the aggregation. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Join can also be performed with <a href="#join-stream">two streams</a>, with <a href="#join-table">table</a> or against externally <a href="#join-window">defined windows</a>.</p>
+<p>A join can also be performed with <a href="#join-stream">two streams</a>, with a <a href="#join-table">table</a> and a stream, or with a stream against externally <a href="#join-window">defined windows</a>.</p>
 </div>
 <p><strong>Syntax</strong></p>
-<p>Join with aggregation is similer to the join with <a href="#join-table">table</a>, but with additional <code>within</code> and <code>per</code> clauses. </p>
+<p>A join with aggregation is similer to the join with <a href="#join-table">table</a>, but with additional <code>within</code> and <code>per</code> clauses. </p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="o">&lt;</span><span class="k">input</span> <span class="n">stream</span><span class="o">&gt;</span> <span class="k">join</span> <span class="o">&lt;</span><span class="n">aggrigation</span><span class="o">&gt;</span> 
   <span class="k">on</span> <span class="o">&lt;</span><span class="k">join</span> <span class="n">condition</span><span class="o">&gt;</span> 
   <span class="n">within</span> <span class="o">&lt;</span><span class="n">time</span> <span class="n">range</span><span class="o">&gt;</span> 
@@ -2983,7 +2996,7 @@ Furthermore, this ensures that the aggregations are not lost due to unexpected s
 </pre></div>
 
 
-<p>Apart for constructs of <a href="#join-table">table</a> this includes the following :</p>
+<p>Apart from constructs of <a href="#join-table">table</a> this includes the following :</p>
 <table>
 <thead>
 <tr>
@@ -2994,17 +3007,17 @@ Furthermore, this ensures that the aggregations are not lost due to unexpected s
 <tbody>
 <tr>
 <td><code>within  &lt;time range&gt;</code></td>
-<td>This allows you to specify the time interval for which the aggregate values need to be retrieved. This can be specified by providing the start and end time separated by comma as <code>string</code> or <code>long</code> values or by using wildcard <code>string</code> specifying the data range. For details refer examples.</td>
+<td>This allows you to specify the time interval for which the aggregate values need to be retrieved. This can be specified by providing the start and end time separated by a comma as <code>string</code> or <code>long</code> values, or by using the wildcard <code>string</code> specifying the data range. For details refer examples.</td>
 </tr>
 <tr>
 <td><code>per &lt;time granularity&gt;</code></td>
-<td>This specifies the time granularity by which the aggregate values must be grouped and returned. E.g., If you specify <code>days</code>, the retrieved aggregate values are grouped for each day within the selected time interval.</td>
+<td>This specifies the time granularity by which the aggregate values must be grouped and returned. e.g., If you specify <code>days</code>, the retrieved aggregate values are grouped for each day within the selected time interval.</td>
 </tr>
 </tbody>
 </table>
 <p><code>within</code> and <code>par</code> clauses also accept attribute values from the stream.</p>
 <p><strong>Example</strong></p>
-<p>Retrieving all aggregation per day within the time range <code>"2014-02-15 00:00:00 +05:30", "2014-03-16 00:00:00 +05:30"</code> </p>
+<p>This query retrieves all aggregation per day within the time range <code>"2014-02-15 00:00:00 +05:30", "2014-03-16 00:00:00 +05:30"</code>.</p>
 <div class="codehilite"><pre><span></span><span class="n">define</span> <span class="n">stream</span> <span class="n">StockStream</span> <span class="p">(</span><span class="n">symbol</span> <span class="n">string</span><span class="p">,</span> <span class="n">value</span> <span class="nb">int</span><span class="p">);</span>
 
 <span class="k">from</span> <span class="n">StockStream</span> <span class="k">as</span> <span class="n">S</span> <span class="k">join</span> <span class="n">TradeAggregation</span> <span class="k">as</span> <span class="n">T</span>
@@ -3016,7 +3029,7 @@ Furthermore, this ensures that the aggregations are not lost due to unexpected s
 </pre></div>
 
 
-<p>Retrieving all aggregation per hour within the day <code>2014-02-15</code>  </p>
+<p>This query retrieves all aggregation per hour within the day <code>2014-02-15</code> .</p>
 <div class="codehilite"><pre><span></span><span class="n">define</span> <span class="n">stream</span> <span class="n">StockStream</span> <span class="p">(</span><span class="n">symbol</span> <span class="n">string</span><span class="p">,</span> <span class="n">value</span> <span class="nb">int</span><span class="p">);</span>
 
 <span class="k">from</span> <span class="n">StockStream</span> <span class="k">as</span> <span class="n">S</span> <span class="k">join</span> <span class="n">TradeAggregation</span> <span class="k">as</span> <span class="n">T</span>
@@ -3028,7 +3041,7 @@ Furthermore, this ensures that the aggregations are not lost due to unexpected s
 </pre></div>
 
 
-<p>Retrieving all aggregation per an attribute value from the stream and within timestamps <code>1490918400</code> and <code>1490922000</code>  </p>
+<p>This query retrieves all aggregation per value for an attribute of the stream  within the time period between timestamps <code>1490918400</code> and <code>1490922000</code>  </p>
 <div class="codehilite"><pre><span></span><span class="n">define</span> <span class="n">stream</span> <span class="n">StockStream</span> <span class="p">(</span><span class="n">symbol</span> <span class="n">string</span><span class="p">,</span> <span class="n">value</span> <span class="nb">int</span><span class="p">,</span> <span class="n">perValue</span> <span class="n">string</span><span class="p">);</span>
 
 <span class="k">from</span> <span class="n">StockStream</span> <span class="k">as</span> <span class="n">S</span> <span class="k">join</span> <span class="n">TradeAggregation</span> <span class="k">as</span> <span class="n">T</span>
@@ -3044,12 +3057,12 @@ Furthermore, this ensures that the aggregations are not lost due to unexpected s
 <p>A defined window is a window that can be shared across multiple queries. 
 Events can be inserted to a defined window from one or more queries and it can produce output events based on the defined window type.</p>
 <p><strong>Syntax</strong></p>
-<p>The following is the syntax for a defined window.</p>
+<p>The syntax for a defined window is as follows:</p>
 <div class="codehilite"><pre><span></span><span class="n">define</span> <span class="n">window</span> <span class="o">&lt;</span><span class="n">window</span> <span class="n">name</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="k">type</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="k">type</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span> <span class="p">)</span> <span class="o">&lt;</span><span class="n">window</span> <span class="k">type</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="k">parameter</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">parameter</span><span class="o">&gt;</span><span class="p">,</span> <span class="err">…</span><span class="p">)</span> <span class="o">&lt;</span><span class="k">output</span> <span class="n">event</span> <span class="k">type</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 
 
-<p>The following parameters are configured in a table definition.</p>
+<p>The following parameters are configured in a table definition:</p>
 <table>
 <thead>
 <tr>
@@ -3060,11 +3073,11 @@ Events can be inserted to a defined window from one or more queries and it can p
 <tbody>
 <tr>
 <td><code>window name</code></td>
-<td>The name of the window defined. (as a convention <code>PascalCase</code> is used for window name)</td>
+<td>The name of the window defined. (<code>PascalCase</code> is used for window names as a convention.)</td>
 </tr>
 <tr>
 <td><code>attribute name</code></td>
-<td>The schema of the window is defined by its attributes by uniquely identifiable attribute names (as a convention <code>camalCase</code> is used for attribute names)</td>
+<td>The schema of the window is defined by its attributes with uniquely identifiable attribute names (<code>camalCase</code> is used for attribute names as a convention.)</td>
 </tr>
 <tr>
 <td><code>attribute type</code></td>
@@ -3076,21 +3089,21 @@ Events can be inserted to a defined window from one or more queries and it can p
 </tr>
 <tr>
 <td><code>output &lt;output event type&gt;</code></td>
-<td>This is optional, Keywords like <code>current events</code>, <code>expired events</code> and <code>all events</code> (the default) can be used to manipulate when the window output should be exposed. For information refer section Output event types.</td>
+<td>This is optional. Keywords such as <code>current events</code>, <code>expired events</code> and <code>all events</code> (the default) can be used to specify when the window output should be exposed. For more information, see <a href="#output-event-types">output event type</a>.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Examples</strong></p>
 <ul>
 <li>
-<p>Returning all output when event arrives and when events expire from the window.</p>
-<p>In the following query, output event type is not specified therefore, it emits both current and expired events as the output.</p>
+<p>Returning all output when events arrive and when events expire from the window.</p>
+<p>In this query, the output event type is not specified. Therefore, it returns both current and expired events as the output.</p>
 <p><pre>
 define window SensorWindow (name string, value float, roomNo int, deviceID string) timeBatch(1 second); </pre></p>
 </li>
 <li>
-<p>Returning a only when events  expire from the window.</p>
-<p>In the following query, the window's output event type is <code>all events</code>. Therefore, it emits only the window expiry events as output.</p>
+<p>Returning an output only when events expire from the window.</p>
+<p>In this query, the output event type of the window is <code>expired events</code>. Therefore, it only returns the events that have expired from the window as the output.</p>
 <p><pre>
 define window SensorWindow (name string, value float, roomNo int, deviceID string) timeBatch(1 second) output expired events; </pre></p>
 </li>
@@ -3098,7 +3111,7 @@ define window SensorWindow (name string, value float, roomNo int, deviceID strin
 <p><strong>Operators on Defined Windows</strong></p>
 <p>The following operators can be performed on defined windows.</p>
 <h3 id="insert_1">Insert<a class="headerlink" href="#insert_1" title="Permanent link">&para;</a></h3>
-<p>This allows events to be inserted in to windows. This is similar to inserting events into streams. </p>
+<p>This allows events to be inserted into windows. This is similar to inserting events into streams. </p>
 <p><strong>Syntax</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="o">&lt;</span><span class="k">input</span> <span class="n">stream</span><span class="o">&gt;</span> 
 <span class="k">select</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span>
@@ -3106,10 +3119,10 @@ define window SensorWindow (name string, value float, roomNo int, deviceID strin
 </pre></div>
 
 
-<p>Like in streams to insert only the specific output event types, use the <code>current events</code>, <code>expired events</code> or the <code>all events</code> keyword between <code>insert</code> and <code>into</code> keywords. 
-For more information refer <a href="#output-event-types">output event type</a> section.</p>
+<p>To insert only events of a specific output event type, add the <code>current events</code>, <code>expired events</code> or the <code>all events</code> keyword between <code>insert</code> and <code>into</code> keywords (similar to how it is done for streams).</p>
+<p>For more information, see <a href="#output-event-types">output event type</a>.</p>
 <p><strong>Example</strong></p>
-<p>The following query inserts all events from the <code>TempStream</code> stream to the <code>OneMinTempWindow</code> window.</p>
+<p>This query inserts all events from the <code>TempStream</code> stream to the <code>OneMinTempWindow</code> window.</p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="n">TempStream</span>
 <span class="k">select</span> <span class="o">*</span>
 <span class="k">insert</span> <span class="k">into</span> <span class="n">OneMinTempWindow</span><span class="p">;</span>
@@ -3120,7 +3133,7 @@ For more information refer <a href="#output-event-types">output event type</a> s
 <p>To allow a stream to retrieve information from a window based on a condition.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Join can also be performed with <a href="#join-stream">two streams</a>, <a href="#join-aggregation">aggregation</a> or with tables <a href="#join-table">tables</a>.</p>
+<p>A join can also be performed with <a href="#join-stream">two streams</a>, <a href="#join-aggregation">aggregation</a> or with tables <a href="#join-table">tables</a>.</p>
 </div>
 <p><strong>Syntax</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="o">&lt;</span><span class="k">input</span> <span class="n">stream</span><span class="o">&gt;</span> <span class="k">join</span> <span class="o">&lt;</span><span class="n">window</span><span class="o">&gt;</span>
@@ -3131,7 +3144,7 @@ For more information refer <a href="#output-event-types">output event type</a> s
 
 
 <p><strong>Example</strong></p>
-<p>The following Siddhi App performs a join count the number of temperature events having more then 40 degrees 
+<p>This Siddhi Application performs a join count the number of temperature events having more then 40 degrees 
  within the last 2 minutes. </p>
 <div class="codehilite"><pre><span></span><span class="n">define</span> <span class="n">window</span> <span class="n">TwoMinTempWindow</span> <span class="p">(</span><span class="n">roomNo</span> <span class="nb">int</span><span class="p">,</span> <span class="n">temp</span> <span class="n">double</span><span class="p">)</span> <span class="n">time</span><span class="p">(</span><span class="s1">&#39;2 min&#39;</span><span class="p">);</span>
 <span class="n">define</span> <span class="n">stream</span> <span class="n">CheckStream</span> <span class="p">(</span><span class="n">requestId</span> <span class="n">string</span><span class="p">);</span>
@@ -3144,9 +3157,9 @@ For more information refer <a href="#output-event-types">output event type</a> s
 
 
 <h3 id="from">From<a class="headerlink" href="#from" title="Permanent link">&para;</a></h3>
-<p>A window can be also be used as input to any query like streams. </p>
+<p>A window can be an input to a query, similar to streams. </p>
 <p>Note !!!
-     When window is used as input to a query, another window cannot be applied on top of this.</p>
+     When window is used as an input to a query, another window cannot be applied on top of this.</p>
 <p><strong>Syntax</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="o">&lt;</span><span class="n">window</span><span class="o">&gt;</span> 
 <span class="k">select</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span>
@@ -3155,7 +3168,7 @@ For more information refer <a href="#output-event-types">output event type</a> s
 
 
 <p><strong>Example</strong>
-The following Siddhi App calculates the maximum temperature within last 5 minutes.</p>
+This Siddhi Application calculates the maximum temperature within the last 5 minutes.</p>
 <div class="codehilite"><pre><span></span><span class="n">define</span> <span class="n">window</span> <span class="n">FiveMinTempWindow</span> <span class="p">(</span><span class="n">roomNo</span> <span class="nb">int</span><span class="p">,</span> <span class="n">temp</span> <span class="n">double</span><span class="p">)</span> <span class="n">time</span><span class="p">(</span><span class="s1">&#39;5 min&#39;</span><span class="p">);</span>
 
 
