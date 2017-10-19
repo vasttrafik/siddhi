@@ -663,6 +663,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../api/4.0.0-M110/" title="4.0.0-M110" class="md-nav__link">
+      4.0.0-M110
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../api/4.0.0-M109/" title="4.0.0-M109" class="md-nav__link">
       4.0.0-M109
     </a>
@@ -1441,6 +1453,21 @@ by a semicolon <code>( ; )</code> as shown in the below syntax. </p>
         ( &lt;stream definition&gt; | &lt;table definition&gt; | ... ) + 
         ( &lt;query&gt; | &lt;partition&gt; ) +
         ;
+</pre></div>
+
+
+<p><strong>Example</strong>
+Siddhi Application named <code>Temperature-Analytics</code> defined with a stream named <code>TempStream</code> and a query 
+named <code>5minAvgQuery</code> for processing it.</p>
+<div class="codehilite"><pre><span></span><span class="o">@</span><span class="n">app</span><span class="p">:</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;Temperature-Analytics&#39;</span><span class="p">)</span>
+
+<span class="n">define</span> <span class="n">stream</span> <span class="n">TempStream</span> <span class="p">(</span><span class="n">deviceID</span> <span class="n">long</span><span class="p">,</span> <span class="n">roomNo</span> <span class="nb">int</span><span class="p">,</span> <span class="n">temp</span> <span class="n">double</span><span class="p">);</span>
+
+<span class="o">@</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;5minAvgQuery&#39;</span><span class="p">)</span>
+<span class="k">from</span> <span class="n">TempStream</span><span class="o">#</span><span class="n">window</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="mi">5</span> <span class="k">min</span><span class="p">)</span>
+<span class="k">select</span> <span class="n">roomNo</span><span class="p">,</span> <span class="k">avg</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="k">as</span> <span class="n">avgTemp</span>
+  <span class="k">group</span> <span class="k">by</span> <span class="n">room</span>
+<span class="k">insert</span> <span class="k">into</span> <span class="n">OutputStream</span><span class="p">;</span>
 </pre></div>
 
 
