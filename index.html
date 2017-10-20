@@ -426,6 +426,18 @@
 
 
   <li class="md-nav__item">
+    <a href="api/4.0.0-M111/" title="4.0.0-M111" class="md-nav__link">
+      4.0.0-M111
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="api/4.0.0-M110/" title="4.0.0-M110" class="md-nav__link">
       4.0.0-M110
     </a>
@@ -915,68 +927,70 @@
                 
                 
                 <h1 id="wso2-siddhi">WSO2 Siddhi<a class="headerlink" href="#wso2-siddhi" title="Permanent link">&para;</a></h1>
-<p>Siddhi is a java library that listens to events from data streams, detect complex conditions described via a <strong>Streaming
- SQL language</strong>, and trigger actions. It can be used to do both <strong><em>Stream Processing</em></strong> and 
- <strong><em>Complex Event Processing</em></strong>.  </p>
+<p>Siddhi is a java library that listens to events from data streams, detects complex conditions described via a <strong>Streaming
+ SQL language</strong>, and triggers actions. It performs both <strong><em>Stream Processing</em></strong> and <strong><em>Complex Event Processing</em></strong>.  </p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="./images/siddhi-overview.png?raw=true" title="Overview" />
 <img alt="" src="./docs/images/siddhi-overview.png?raw=true" title="Overview" /></p>
-<p>It can be used for;</p>
+<p>Siddhi supports the following:</p>
 <ul>
 <li>Data preprocessing</li>
-<li>Generate alerts based on thresholds</li>
-<li>Calculate aggregations over a short window or a long time period</li>
+<li>Generating alerts based on thresholds</li>
+<li>Calculating aggregations over a short window or a long time period</li>
 <li>Joining multiple data streams</li>
-<li>Data correlation while finding missing and erroneous events</li>
-<li>Interact streaming data with databases</li>
+<li>Correlating data while finding missing and erroneous events</li>
+<li>Interacting streaming data with databases</li>
 <li>Detecting temporal event patterns</li>
 <li>Tracking (something over space or time)</li>
-<li>Trend analysis (rise, fall, turn, tipple bottom)</li>
-<li>Real-time predictions with existing and online machine learning models</li>
-<li>And many more ... <a target="_blank" href="http://www.kdnuggets.com/2015/08/patterns-streaming-realtime-analytics.html">Patterns of Streaming Realtime Analytics</a></li>
+<li>Analyzing trends (rise, fall, turn, tipple bottom)</li>
+<li>Making real-time predictions with existing and online machine learning models</li>
+<li>And many more ...  For more information, see <a target="_blank" href="http://www.kdnuggets.com/2015/08/patterns-streaming-realtime-analytics.html">Patterns of Streaming Realtime Analytics</a></li>
 </ul>
 <p>Siddhi is free and open source, under <strong>Apache Software License v2.0</strong>.</p>
 <h2 id="get-started">Get Started!<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
-<p>Get started with Siddhi in few minutes by following <a target="_blank" href="https://wso2.github.io/siddhi/documentation/siddhi-quckstart-4.0/">Siddhi Quick Start Guide</a></p>
+<p>Get started with Siddhi in a few minutes by following the <a target="_blank" href="https://wso2.github.io/siddhi/documentation/siddhi-quckstart-4.0/">Siddhi Quick Start Guide</a></p>
 <h2 id="why-use-siddhi">Why use Siddhi ?<a class="headerlink" href="#why-use-siddhi" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Fast, that <a target="_blank" href="http://wso2.com/library/conference/2017/2/wso2con-usa-2017-scalable-real-time-complex-event-processing-at-uber?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">UBER</a> 
-use it to process 20 Billion events per day (300,000 events per second). </li>
-<li>Lightweight (&lt;2MB), embeddable in Android and RaspberryPi</li>
-<li>Has 40+ <a target="_blank" href="https://wso2.github.io/siddhi/extensions/">Siddhi Extensions</a></li>
-<li>60+ companies including many Fortune 500 companies use Siddhi in production, following are some; <ul>
-<li>WSO2 use Siddhi in their products such as <a target="_blank" href="http://wso2.com/analytics?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">WSO2 Data Analytics Server</a> 
-   and <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a> to provide stream processing capabilities. 
-   Uses it as the <strong>edge analytics</strong> library of <a href="http://wso2.com/iot?utm_source=gitanalytics&amp;utm_campaign=gitanalytics_Jul17">WSO2 IoT Server</a>, 
-   core of <a target="_blank" href="http://wso2.com/api-management?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">WSO2 API Manager</a>'s throttling, and core of 
-   <a target="_blank" href="http://wso2.com/platform?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">WSO2 products'</a> analytics.</li>
-<li><a target="_blank" href="http://wso2.com/library/conference/2017/2/wso2con-usa-2017-scalable-real-time-complex-event-processing-at-uber?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">UBER</a> for fraud analytics</li>
-<li><a target="_blank" href="http://eagle.apache.org/docs/index.html">Apache Eagle</a> use Siddhi as a policy engine</li>
+<li>It is <strong>fast</strong>. <a target="_blank" href="http://wso2.com/library/conference/2017/2/wso2con-usa-2017-scalable-real-time-complex-event-processing-at-uber?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">UBER</a> 
+uses it to process 20 Billion events per day (300,000 events per second). </li>
+<li>It is <strong>lightweight</strong> (&lt;2MB),  and embeddable in Android and RaspberryPi.</li>
+<li>It has <strong>over 40 <a target="_blank" href="https://wso2.github.io/siddhi/extensions/">Siddhi Extensions</a></strong></li>
+<li>It is <strong>used by over 60 companies including many Fortune 500 companies</strong> in production. Following are some examples:<ul>
+<li><strong>WSO2</strong> uses Siddhi for the following purposes:<ul>
+<li>To provide stream processing capabilities in their products such as <a target="_blank" href="http://wso2.com/analytics?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">WSO2 Data Analytics Server</a> 
+   and <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a>.</li>
+<li>As the <strong>edge analytics</strong> library of <a href="http://wso2.com/iot?utm_source=gitanalytics&amp;utm_campaign=gitanalytics_Jul17">WSO2 IoT Server</a>.</li>
+<li>As the core of <a target="_blank" href="http://wso2.com/api-management?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">WSO2 API Manager</a>'s throttling. </li>
+<li>As the core of <a target="_blank" href="http://wso2.com/platform?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">WSO2 products'</a> analytics.</li>
 </ul>
 </li>
-<li>Solutions based on Siddhi have been finalists at <a target="_blank" href="http://dl.acm.org/results.cfm?query=(%252Bgrand%20%252Bchallenge%20%252Bwso2)&within=owners.owner=HOSTED&filtered=&dte=&bfr=">ACM DEBS Grand Challenge Stream Processing competitions in 2014, 2015, 2016, 2017</a>.</li>
-<li>Been basis of many academic research projects and have <a target="_blank" href="https://scholar.google.com/scholar?cites=5113376427716987836&as_sdt=2005&sciodt=0,5&hl=en">60+ citations</a>. </li>
+<li><strong><a target="_blank" href="http://wso2.com/library/conference/2017/2/wso2con-usa-2017-scalable-real-time-complex-event-processing-at-uber?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">UBER</a></strong> uses Siddhi for fraud analytics.</li>
+<li><strong><a target="_blank" href="http://eagle.apache.org/docs/index.html">Apache Eagle</a></strong> uses Siddhi as a policy engine.</li>
 </ul>
-<p>If you also use Siddhi, we would love to hear more. </p>
+</li>
+<li>Solutions based on Siddhi have been <strong>finalists at <a target="_blank" href="http://dl.acm.org/results.cfm?query=(%252Bgrand%20%252Bchallenge%20%252Bwso2)&within=owners.owner=HOSTED&filtered=&dte=&bfr=">ACM DEBS Grand Challenge Stream Processing competitions</strong> in 2014, 2015, 2016, 2017</a>.</li>
+<li>Siddhi has been <strong>the basis of many academic research projects</strong> and has <a target="_blank" href="https://scholar.google.com/scholar?cites=5113376427716987836&as_sdt=2005&sciodt=0,5&hl=en"><strong>over 60 citations</strong></a>. </li>
+</ul>
+<p>If you are a Siddhi user, we would love to hear more. </p>
 <h2 id="try-siddhi-with-wso2-stream-processor">Try Siddhi with <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a><a class="headerlink" href="#try-siddhi-with-wso2-stream-processor" title="Permanent link">&para;</a></h2>
-<p><a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a> is a server version of Siddhi that's also released under 
+<p><a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a> is a server version of Siddhi that is also released under 
  <strong>Apache Software License v2.0</strong>. It was a Strong Performer in <a target="_blank" href="https://go.forrester.com/blogs/16-04-16-15_true_streaming_analytics_platforms_for_real_time_everything/">The Forrester Wave: Big Data Streaming Analytics, Q1 2016</a> 
  (<a target="_blank" href="https://www.forrester.com/report/The+Forrester+Wave+Big+Data+Streaming+Analytics+Q1+2016/-/E-RES129023">Report</a>) 
 and a <a target="_blank" href="https://www.gartner.com/doc/3314217/cool-vendors-internet-things-analytics">Cool Vendors in Internet of Things Analytics, 2016</a>. </p>
-<p>To get following capabilities by using <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a> :  </p>
+<p>If you use <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a>, you can use the Siddhi functionality with the following additional features:  </p>
 <ul>
-<li><strong>Siddhi Query Editor</strong> </li>
-<li><strong>Siddhi Debugger</strong></li>
-<li><strong>Event Simulator</strong> </li>
-<li>Run Siddhi as a Server with High Availability and Scalability</li>
+<li>The <strong>Siddhi Query Editor</strong> tool</li>
+<li>The <strong>Siddhi Debugger</strong> tool</li>
+<li>The <strong>Event Simulator</strong>  tool</li>
+<li>Run Siddhi as a <strong>server</strong> with <strong>high availability</strong> and <strong>scalability</strong>.</li>
 <li>Monitoring support for Siddhi</li>
 <li>Realtime dashboard </li>
-<li>Business user friendly query generation and deployment</li>
+<li>Business user-friendly query generation and deployment</li>
 </ul>
 <p>There are domain specific solutions built using Siddhi, including <a target="_blank" href="https://wso2.com/analytics/solutions?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">Fraud Detection, Stock Market Surveillance, Location analytics, Proximity Marketing, Contextual Recommendation, Ad Optimization, Operational Analytics, and Detecting Chart Patterns</a>. </p>
-<p>If you want more information please contact us via <a target="_blank" href="http://wso2.com/support?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">http://wso2.com/support/</a>.</p>
+<p>For more information please contact us via <a target="_blank" href="http://wso2.com/support?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">http://wso2.com/support/</a>.</p>
 <h2 id="siddhi-versions">Siddhi Versions<a class="headerlink" href="#siddhi-versions" title="Permanent link">&para;</a></h2>
-<p>Find the released Siddhi libraries from <a target="_blank" href="http://maven.wso2.org/nexus/content/groups/wso2-public/org/wso2/siddhi/">here</a>.</p>
+<p>Find the released Siddhi libraries <a target="_blank" href="http://maven.wso2.org/nexus/content/groups/wso2-public/org/wso2/siddhi/">here</a>.</p>
 <p><a target="_blank" href=""></a> </p>
 <ul>
 <li>
@@ -990,7 +1004,7 @@ and a <a target="_blank" href="https://www.gartner.com/doc/3314217/cool-vendors-
 </li>
 </ul>
 <h2 id="latest-api-docs">Latest API Docs<a class="headerlink" href="#latest-api-docs" title="Permanent link">&para;</a></h2>
-<p>Latest API Docs is <a target="_blank" href="https://wso2.github.io/siddhi/api/4.0.0-M110">4.0.0-M110</a>.</p>
+<p>Latest API Docs is <a target="_blank" href="https://wso2.github.io/siddhi/api/4.0.0-M111">4.0.0-M111</a>.</p>
 <h2 id="jenkins-build-status">Jenkins Build Status<a class="headerlink" href="#jenkins-build-status" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1008,8 +1022,8 @@ and a <a target="_blank" href="https://www.gartner.com/doc/3314217/cool-vendors-
 </table>
 <h2 id="how-to-contribute">How to Contribute<a class="headerlink" href="#how-to-contribute" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Please report issues at <a target="_blank" href="https://github.com/wso2/siddhi/issues">GitHub Issue Tracker</a>.</li>
-<li>Feel fee to play with the <a target="_blank" href="https://github.com/wso2/siddhi">Siddhi source code</a> and send your contributions as pull requests to <a target="_blank" href="https://github.com/wso2/siddhi/tree/master">master branch</a>. </li>
+<li>Report issues at <a target="_blank" href="https://github.com/wso2/siddhi/issues">GitHub Issue Tracker</a>.</li>
+<li>Feel free to try out the <a target="_blank" href="https://github.com/wso2/siddhi">Siddhi source code</a> and send your contributions as pull requests to the <a target="_blank" href="https://github.com/wso2/siddhi/tree/master">master branch</a>. </li>
 </ul>
 <h2 id="contact-us">Contact us<a class="headerlink" href="#contact-us" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1018,9 +1032,9 @@ and a <a target="_blank" href="https://www.gartner.com/doc/3314217/cool-vendors-
 </ul>
 <h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
 <ul>
-<li>We are committed to ensuring support for Siddhi (with it's <a target="_blank" href="https://wso2.github.io/siddhi/extensions/">extensions</a>) and <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a> from development to production. </li>
+<li>We are committed to ensuring support for Siddhi (with its <a target="_blank" href="https://wso2.github.io/siddhi/extensions/">extensions</a>) and <a target="_blank" href="https://github.com/wso2/product-sp">WSO2 Stream Processor</a> from development to production. </li>
 <li>Our unique approach ensures that all support leverages our open development methodology and is provided by the very same engineers who build the technology. </li>
-<li>For more details and to take advantage of this unique opportunity contact us via <a target="_blank" href="http://wso2.com/support?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">http://wso2.com/support/</a>. </li>
+<li>For more details and to take advantage of this unique opportunity, contact us via <a target="_blank" href="http://wso2.com/support?utm_source=gitanalytics&utm_campaign=gitanalytics_Jul17">http://wso2.com/support/</a>. </li>
 </ul>
 <p>Siddhi was joint research project initiated by WSO2 and University of Moratuwa, Sri Lanka.</p>
                 
