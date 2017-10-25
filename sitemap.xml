@@ -58,6 +58,12 @@
     
         
     <url>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-M114/</loc>
+     <lastmod>2017-10-25</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-M113/</loc>
      <lastmod>2017-10-25</lastmod>
      <changefreq>daily</changefreq>
