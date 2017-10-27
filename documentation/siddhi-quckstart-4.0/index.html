@@ -398,6 +398,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../api/4.0.0-M118/" title="4.0.0-M118" class="md-nav__link">
+      4.0.0-M118
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../api/4.0.0-M117/" title="4.0.0-M117" class="md-nav__link">
       4.0.0-M117
     </a>
@@ -935,13 +947,15 @@
 It performs <strong><em>Stream Processing</em></strong> and <strong><em>Complex Event Processing</em></strong> on real time data streams. </p>
 <p>Siddhi is used by many companies including Uber, and eBay (via Apache Eagle). In fact <strong>Uber processes more than 20 billion 
 events per day using Siddhi</strong> for fraud analytics and Siddhi is used in Apache Eagle as a policy enforcement engine.</p>
-<p>The quick start guide has <strong>6 sections</strong> as following,
-1. Overview on Stream Processing and Complex Event Processing (CEP) - about the <strong>domain</strong> of Siddhi
-2. Overview of Siddhi - basic <strong>architecture</strong> explained
-3. Using Siddhi for the First Time - how to <strong>set up</strong> the software
-4. Siddhi ‘Hello World!’ — Your <strong>First Siddhi Application</strong>
-5. Simulating Events - <strong>testing</strong> your query with simulated events
-6. Bit of Stream Processing - <strong>temporal event processing</strong></p>
+<p>The quick start guide has <strong>6 sections</strong> as following,</p>
+<ol>
+<li>Overview on Stream Processing and Complex Event Processing - about the <strong>domain</strong> of Siddhi</li>
+<li>Overview of Siddhi - basic <strong>architecture</strong> explained</li>
+<li>Using Siddhi for the First Time - how to <strong>set up</strong> the software</li>
+<li>Siddhi ‘Hello World!’ — Your <strong>First Siddhi Application</strong></li>
+<li>Simulating Events - <strong>testing</strong> your query with simulated events</li>
+<li>Bit of Stream Processing - <strong>temporal event processing</strong></li>
+</ol>
 <h2 id="1-overview-on-stream-processing-and-complex-event-processing-cep">1. Overview on Stream Processing and Complex Event Processing (CEP)<a class="headerlink" href="#1-overview-on-stream-processing-and-complex-event-processing-cep" title="Permanent link">&para;</a></h2>
 <p>Before diving into how to use Siddhi we will first discuss in brief what Stream Processing 
 and Complex Event Processing is such that we can get more idea on what use-cases can be covered by Siddhi.</p>
@@ -992,12 +1006,12 @@ language which will be discussed in the 4th section. After writing and starting 
 sophisticated editor with GUI (called <em><strong>“Stream Processor Studio”</strong></em>)where you can write your query and simulate events
 as a data stream.</p>
 <p><strong>Step 1</strong> — Install 
-<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle Java SE Development Kit (JDK)</a> version 1.8\
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Oracle Java SE Development Kit (JDK)</a> version 1.8 <br>
 <strong>Step 2</strong> — <a href="https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/">Set the JAVA_HOME</a> environment 
-variable\
-<strong>Step 3</strong> — Download the latest <a href="https://github.com/wso2/product-sp/releases">WSO2 Stream Processor</a>\
-<strong>Step 4</strong> — Extract the downloaded zip and navigate to <SP_HOME>/bin (SP_HOME refers to the extracted folder)\
-<strong>Step 5</strong> — Issue the following command in command prompt(Windows) / terminal(Linux)\</p>
+variable <br>
+<strong>Step 3</strong> — Download the latest <a href="https://github.com/wso2/product-sp/releases">WSO2 Stream Processor</a> <br>
+<strong>Step 4</strong> — Extract the downloaded zip and navigate to <code>&lt;SP_HOME&gt;/bin</code> <br> (<code>SP_HOME</code> refers to the extracted folder) <br>
+<strong>Step 5</strong> — Issue the following command in command prompt (Windows) / terminal (Linux) </p>
 <div class="codehilite"><pre><span></span>For Windows: editor.bat
 For Linux: ./editor.sh
 </pre></div>
@@ -1020,7 +1034,7 @@ available for complex analysis but we will start with a simple one. You can find
 and its functions in <a href="https://wso2.github.io/siddhi/documentation/siddhi-4.0/">Siddhi Query Guide</a>.</p>
 <p>We will <strong>consider a scenario where we are loading cargo boxes into a ship</strong>. We need to keep track of the total 
 weight of the cargo added. <strong>Weight measurement of a cargo box when loading is treated as an event</strong>.</p>
-<p><img alt="" src="../../images/quickstart/loading-ship.jpg?raw=true" title="Loading Cargo on Ship" /></p>
+<p><img alt="" src="../../images/quickstart/loading-ship.jpeg?raw=true" title="Loading Cargo on Ship" /></p>
 <p>We can write a Siddhi program for the above scenario which will have <strong>4 parts</strong>.</p>
 <p><strong>Part 1 — Giving our Siddhi application a suitable name.</strong> This is a Siddhi routine. Here we will name our app as 
 <em>“HelloWorldApp”</em></p>
@@ -1031,7 +1045,7 @@ weight of the cargo added. <strong>Weight measurement of a cargo box when loadin
 <p><strong>Part 2 — Defining the input stream.</strong> Stream will have a name and a schema defining the data that each of it's incoming event will contain.
 The event data attributes are expressed as name and type pairs. Here,</p>
 <ul>
-<li>Name of the input stream — <em>“CargoStream”</em> \
+<li>Name of the input stream — <em>“CargoStream”</em> <br>
 This contains only one data attribute:</li>
 <li>name of the data in each event — <em>“weight”</em></li>
 <li>Type of the data <em>“weight”</em> — int</li>
@@ -1045,17 +1059,19 @@ This contains only one data attribute:</li>
 <em>"sink"</em>  to log the <code>OutputStream</code> so that we can observe the output values. (<strong>Sink is the Siddhi way to publish 
 streams to external systems.</strong> This particular <code>log</code> type sink will just log the stream events. Learn more about sinks 
 <a href="https://wso2.github.io/siddhi/documentation/siddhi-4.0/#sink">here</a>)</p>
-<div class="codehilite"><pre><span></span>@sink(type=&#39;log&#39;,  prefix=&#39;LOGGER&#39;)
+<div class="codehilite"><pre><span></span>@sink(type=&#39;log&#39;, prefix=&#39;LOGGER&#39;)
 define stream OutputStream(weight int, totalWeight long);
 </pre></div>
 
 
-<p><strong>Part 4 — The actual Siddhi query.</strong> Here we will specify 5 things.
-1. A name for the query — <em>“HelloWorldQuery”</em>
-2. Which stream should be taken into processing — <em>“CargoStream”</em>
-3. What data we require in the output stream — <em>“weight”</em>, <em>“totalWeight”</em>
-4. How the output should be calculated - by <em>sum</em>ing the <em>weight</em>s<br />
-5. which stream should be populated with the output — <em>“OutputStream”</em></p>
+<p><strong>Part 4 — The actual Siddhi query.</strong> Here we will specify 5 things.</p>
+<ol>
+<li>A name for the query — <em>“HelloWorldQuery”</em></li>
+<li>Which stream should be taken into processing — <em>“CargoStream”</em></li>
+<li>What data we require in the output stream — <em>“weight”</em>, <em>“totalWeight”</em></li>
+<li>How the output should be calculated - by <em>sum</em>ing the <em>weight</em>s  </li>
+<li>which stream should be populated with the output — <em>“OutputStream”</em></li>
+</ol>
 <div class="codehilite"><pre><span></span>@info(name=&#39;HelloWorldQuery&#39;)
 from CargoStream
 select weight, sum(weight) as totalWeight
@@ -1069,11 +1085,13 @@ insert into OutputStream;
 panel in the left side of the Stream Processor Studio. <strong>You should save your HelloWorldApp by going to <code>file</code> -&gt; 
 <code>save</code> before you run event simulation.</strong> Then click on the <em>“Event Simulator”</em> and configure it as shown below.</p>
 <p><img alt="" src="../../images/quickstart/event-simulation.png?raw=true" title="Simulating Events in Stream Processor Studio" /></p>
-<p><strong>Step 1 — Configurations,</strong>
-<em> Siddhi App Name — <em>“HelloWorldApp”</em>
-</em> Stream Name — <em>“CargoStream”</em>
-<em> Timestamp — (Leave it blank)
-</em> weight — 2 (or some integer)</p>
+<p><strong>Step 1 — Configurations,</strong></p>
+<ul>
+<li>Siddhi App Name — <em>“HelloWorldApp”</em></li>
+<li>Stream Name — <em>“CargoStream”</em></li>
+<li>Timestamp — (Leave it blank)</li>
+<li>weight — 2 (or some integer)</li>
+</ul>
 <p><strong>Step 2 — Click on “Run” mode and hit the “Start” button</strong>. This will start the Siddhi App. 
 You can verify Siddhi app getting started by the message 
 <em>“HelloWorldApp.siddhi Started Successfully!”</em> printed in the Stream Processor Studio console.</p>
