@@ -3576,17 +3576,22 @@ some periodic executions. </p>
 <li>
 <p>Triggering events regularly at specific time intervals</p>
 <p>The following query triggers events every 5 minutes.</p>
-<p><code>sql
- define trigger FiveMinTriggerStream at every 5 min;</code></p>
 </li>
+</ul>
+<div class="codehilite"><pre><span></span>     <span class="n">define</span> <span class="k">trigger</span> <span class="n">FiveMinTriggerStream</span> <span class="k">at</span> <span class="k">every</span> <span class="mi">5</span> <span class="k">min</span><span class="p">;</span>
+</pre></div>
+
+
+<ul>
 <li>
 <p>Triggering events at a specific time on specified days</p>
 <p>The following query triggers an event at 10.15 AM on every weekdays.</p>
-<p>```sql
- define trigger FiveMinTriggerStream at '0 15 10 ? * MON-FRI';</p>
-<p>```</p>
 </li>
 </ul>
+<div class="codehilite"><pre><span></span>     <span class="n">define</span> <span class="k">trigger</span> <span class="n">FiveMinTriggerStream</span> <span class="k">at</span> <span class="s1">&#39;0 15 10 ? * MON-FRI&#39;</span><span class="p">;</span>
+</pre></div>
+
+
 <h2 id="script">Script<a class="headerlink" href="#script" title="Permanent link">&para;</a></h2>
 <p>Scripts allow you to write functions in other programming languages and execute them within Siddhi queries. 
 Functions defined via scripts can be accessed in queries similar to any other inbuilt function. 
