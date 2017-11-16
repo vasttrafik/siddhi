@@ -292,6 +292,12 @@
     </url>
         
     <url>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha14/</loc>
+     <lastmod>2017-11-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha13/</loc>
      <lastmod>2017-11-16</lastmod>
      <changefreq>daily</changefreq>
