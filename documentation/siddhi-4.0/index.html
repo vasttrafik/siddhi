@@ -1131,6 +1131,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../api/4.0.0-alpha13/" title="4.0.0-alpha13" class="md-nav__link">
+      4.0.0-alpha13
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../api/4.0.0-alpha12/" title="4.0.0-alpha12" class="md-nav__link">
       4.0.0-alpha12
     </a>
@@ -3110,7 +3122,7 @@ In such cases use the <code>update or insert</code> operation. </p>
 
 
 <p>Similar to streams, you need to use the <code>current events</code>, <code>expired events</code> or the <code>all events</code> keyword between <code>insert</code> and <code>into</code> keywords in order to insert only the specific output event types. 
-For more information, see <a href="http://127.0.0.1:8000/documentation/siddhi-4.0/#output-event-types">output event type</a>.</p>
+For more information, see <a href="#output-event-types">output event type</a></p>
 <p><strong>Example</strong></p>
 <p>This query inserts all the events from the <code>TempStream</code> stream to the <code>TempTable</code> table.</p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="n">TempStream</span>
@@ -3164,7 +3176,7 @@ entity to trigger the join operation.</p>
 <p>The <code>condition</code> element specifies the basis on which events are selected to be deleted. 
 When specifying the condition, table attributes should be referred to with the table name.</p>
 <p>To execute delete for specific output event types, use the <code>current events</code>, <code>expired events</code> or the <code>all events</code> keyword with <code>for</code> as shown
-in the syntax. For more information, see <a href="http://127.0.0.1:8000/documentation/siddhi-4.0/#output-event-types">output event type</a>.</p>
+in the syntax. For more information, see <a href="#output-event-types">output event type</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Table attributes must be always referred to with the table name as follows: 
@@ -3197,7 +3209,7 @@ in the syntax. For more information, see <a href="http://127.0.0.1:8000/document
 When specifying the <code>condition</code>, table attributes must be referred to with the table name.</p>
 <p>You can use the <code>set</code> keyword to update selected attributes from the table. Here, for each assignment, the attribute specified in the left must be the table attribute, and the one specified in the right can be a stream/table attribute a mathematical operation, or other. When the <code>set</code> clause is not provided, all the attributes in the table are updated.</p>
 <p>To execute an update for specific output event types use the <code>current events</code>, <code>expired events</code> or the <code>all events</code> keyword with <code>for</code> as shown
-in the syntax. For more information, see <a href="http://127.0.0.1:8000/documentation/siddhi-4.0/#output-event-types">output event type</a>.</p>
+in the syntax. For more information, see <a href="#output-event-types">output event type</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Table attributes must be always referred to with the table name as shown below:
