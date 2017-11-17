@@ -1131,6 +1131,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../api/4.0.0-alpha16/" title="4.0.0-alpha16" class="md-nav__link">
+      4.0.0-alpha16
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../api/4.0.0-alpha15/" title="4.0.0-alpha15" class="md-nav__link">
       4.0.0-alpha15
     </a>
@@ -1754,7 +1766,7 @@ named <code>5minAvgQuery</code> for processing it.</p>
 <span class="o">@</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;5minAvgQuery&#39;</span><span class="p">)</span>
 <span class="k">from</span> <span class="n">TempStream</span><span class="o">#</span><span class="n">window</span><span class="p">.</span><span class="n">time</span><span class="p">(</span><span class="mi">5</span> <span class="k">min</span><span class="p">)</span>
 <span class="k">select</span> <span class="n">roomNo</span><span class="p">,</span> <span class="k">avg</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span> <span class="k">as</span> <span class="n">avgTemp</span>
-  <span class="k">group</span> <span class="k">by</span> <span class="n">room</span>
+  <span class="k">group</span> <span class="k">by</span> <span class="n">roomNo</span>
 <span class="k">insert</span> <span class="k">into</span> <span class="n">OutputStream</span><span class="p">;</span>
 </pre></div>
 
