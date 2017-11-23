@@ -507,8 +507,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update-or-insert" title="Update or Insert" class="md-nav__link">
-    Update or Insert
+  <a href="#update-or-insert-into" title="Update or Insert Into" class="md-nav__link">
+    Update or Insert Into
   </a>
   
 </li>
@@ -1131,6 +1131,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../api/4.0.0-alpha25/" title="4.0.0-alpha25" class="md-nav__link">
+      4.0.0-alpha25
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../api/4.0.0-alpha24/" title="4.0.0-alpha24" class="md-nav__link">
       4.0.0-alpha24
     </a>
@@ -1670,8 +1682,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update-or-insert" title="Update or Insert" class="md-nav__link">
-    Update or Insert
+  <a href="#update-or-insert-into" title="Update or Insert Into" class="md-nav__link">
+    Update or Insert Into
   </a>
   
 </li>
@@ -3244,7 +3256,7 @@ Therefore each entry in this table must have a unique value for <code>symbol</co
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If the table is defined with primary keys, and if you insert duplicate data, primary key constrain violations can occur. 
-In such cases use the <code>update or insert</code> operation. </p>
+In such cases use the <code>update or insert into</code> operation. </p>
 </div>
 <p><strong>Syntax</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="o">&lt;</span><span class="k">input</span> <span class="n">stream</span><span class="o">&gt;</span> 
@@ -3360,13 +3372,13 @@ in the syntax. For more information, see <a href="#output-event-types">output ev
 </pre></div>
 
 
-<h3 id="update-or-insert">Update or Insert<a class="headerlink" href="#update-or-insert" title="Permanent link">&para;</a></h3>
+<h3 id="update-or-insert-into">Update or Insert Into<a class="headerlink" href="#update-or-insert-into" title="Permanent link">&para;</a></h3>
 <p>This allows you update if the event attributes already exist in the table based on a condition, or 
 else insert the entry as a new attribute.</p>
 <p><strong>Syntax</strong></p>
 <div class="codehilite"><pre><span></span><span class="k">from</span> <span class="o">&lt;</span><span class="k">input</span> <span class="n">stream</span><span class="o">&gt;</span> 
 <span class="k">select</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span>
-<span class="k">update</span> <span class="k">or</span> <span class="k">insert</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span> <span class="p">(</span><span class="k">for</span> <span class="o">&lt;</span><span class="k">output</span> <span class="n">event</span> <span class="k">type</span><span class="o">&gt;</span><span class="p">)</span><span class="o">?</span> 
+<span class="k">update</span> <span class="k">or</span> <span class="k">insert</span> <span class="k">into</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span> <span class="p">(</span><span class="k">for</span> <span class="o">&lt;</span><span class="k">output</span> <span class="n">event</span> <span class="k">type</span><span class="o">&gt;</span><span class="p">)</span><span class="o">?</span> 
     <span class="k">set</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="k">table</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">attribute</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">expression</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span>
     <span class="k">on</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span>
 </pre></div>
@@ -3392,7 +3404,7 @@ in the syntax. To understand more refer <a href="http://127.0.0.1:8000/documenta
 
 <span class="k">from</span> <span class="n">RoomAssigneeStream</span>
 <span class="k">select</span> <span class="n">roomNumber</span> <span class="k">as</span> <span class="n">roomNo</span><span class="p">,</span> <span class="k">type</span><span class="p">,</span> <span class="n">assignee</span>
-<span class="k">update</span> <span class="k">or</span> <span class="k">insert</span> <span class="n">RoomAssigneeTable</span>
+<span class="k">update</span> <span class="k">or</span> <span class="k">insert</span> <span class="k">into</span> <span class="n">RoomAssigneeTable</span>
     <span class="k">set</span> <span class="n">RoomAssigneeTable</span><span class="p">.</span><span class="n">assignee</span> <span class="o">=</span> <span class="n">assignee</span>
     <span class="k">on</span> <span class="n">RoomAssigneeTable</span><span class="p">.</span><span class="n">roomNo</span> <span class="o">==</span> <span class="n">roomNo</span><span class="p">;</span>
 </pre></div>
