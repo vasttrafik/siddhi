@@ -394,13 +394,19 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta8/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta9/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha8/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta8/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -418,25 +424,25 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta6/</loc>
-     <lastmod>2017-11-30</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha6/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta5/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta6/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha5/</loc>
+     <lastmod>2017-11-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta5/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -478,13 +484,13 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta/</loc>
      <lastmod>2017-11-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
