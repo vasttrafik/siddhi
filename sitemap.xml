@@ -334,13 +334,13 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha18/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta18/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta17/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha18/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -352,7 +352,7 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha16/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta17/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -364,13 +364,19 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha15/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha16/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-beta15/</loc>
+     <lastmod>2017-12-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha15/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -388,19 +394,13 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha13/</loc>
-     <lastmod>2017-12-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-beta13/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha12/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha13/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -412,7 +412,7 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha11/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha12/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -424,13 +424,19 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha10/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha11/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-beta10/</loc>
+     <lastmod>2017-12-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha10/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -448,25 +454,25 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta8/</loc>
-     <lastmod>2017-12-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha8/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha7/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta8/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-beta7/</loc>
+     <lastmod>2017-12-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha7/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -484,13 +490,13 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta5/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha5/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha5/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta5/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -508,19 +514,13 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta3/</loc>
-     <lastmod>2017-12-11</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha3/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta2/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta3/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -532,13 +532,19 @@
     </url>
         
     <url>
-     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta/</loc>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta2/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wso2.github.io/siddhi/api/4.0.0-alpha/</loc>
+     <lastmod>2017-12-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wso2.github.io/siddhi/api/4.0.0-beta/</loc>
      <lastmod>2017-12-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
