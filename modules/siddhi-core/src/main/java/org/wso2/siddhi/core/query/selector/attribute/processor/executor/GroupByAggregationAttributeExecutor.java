@@ -22,67 +22,82 @@ import org.wso2.siddhi.core.event.ComplexEvent;
 import org.wso2.siddhi.core.executor.ExpressionExecutor;
 import org.wso2.siddhi.core.query.selector.QuerySelector;
 import org.wso2.siddhi.core.query.selector.attribute.aggregator.AttributeAggregator;
+import org.wso2.siddhi.core.util.extension.holder.EternalReferencedHolder;
 
 import java.util.AbstractMap;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
-public class GroupByAggregationAttributeExecutor extends AbstractAggregationAttributeExecutor {
+public class GroupByAggregationAttributeExecutor extends AbstractAggregationAttributeExecutor
+		implements EternalReferencedHolder {
 
-    protected Map<String, AttributeAggregator> aggregatorMap = new HashMap<String, AttributeAggregator>();
+	protected Map<String, AttributeAggregator> aggregatorMap = new HashMap<String, AttributeAggregator>();
 
-    public GroupByAggregationAttributeExecutor(AttributeAggregator attributeAggregator,
-                                               ExpressionExecutor[] attributeExpressionExecutors,
-                                               ExecutionPlanContext executionPlanContext, String queryName) {
-        super(attributeAggregator, attributeExpressionExecutors, executionPlanContext, queryName);
-    }
+	public GroupByAggregationAttributeExecutor(AttributeAggregator attributeAggregator,
+			ExpressionExecutor[] attributeExpressionExecutors, ExecutionPlanContext executionPlanContext, String queryName) {
+		super(attributeAggregator, attributeExpressionExecutors, executionPlanContext, queryName);
+		executionPlanContext.addEternalReferencedHolder(this);
+	}
 
-    @Override
-    public Object execute(ComplexEvent event) {
-        if (event.getType() == ComplexEvent.Type.RESET) {
-            Object aOutput = null;
-            for (AttributeAggregator attributeAggregator : aggregatorMap.values()) {
-                aOutput = attributeAggregator.process(event);
-            }
-            return aOutput;
-        }
-        String key = QuerySelector.getThreadLocalGroupByKey();
-        AttributeAggregator currentAttributeAggregator = aggregatorMap.get(key);
-        if (currentAttributeAggregator == null) {
-            currentAttributeAggregator = attributeAggregator.cloneAggregator(key);
-            currentAttributeAggregator.initAggregator(attributeExpressionExecutors, executionPlanContext);
-            currentAttributeAggregator.start();
-            aggregatorMap.put(key, currentAttributeAggregator);
-        }
-        return currentAttributeAggregator.process(event);
-    }
+	@Override
+	public Object execute(ComplexEvent event) {
+		if (event.getType() == ComplexEvent.Type.RESET) {
+			Object aOutput = null;
+			for (AttributeAggregator attributeAggregator : aggregatorMap.values()) {
+				aOutput = attributeAggregator.process(event);
+			}
+			return aOutput;
+		}
+		String key = QuerySelector.getThreadLocalGroupByKey();
+		AttributeAggregator currentAttributeAggregator = aggregatorMap.get(key);
+		if (currentAttributeAggregator == null) {
+			currentAttributeAggregator = attributeAggregator.cloneAggregator(key);
+			aggregatorMap.put(key, currentAttributeAggregator);
+		}
+		return currentAttributeAggregator.process(event);
+	}
 
-    public ExpressionExecutor cloneExecutor(String key) {
-        return new GroupByAggregationAttributeExecutor(attributeAggregator.cloneAggregator(key), attributeExpressionExecutors, executionPlanContext, queryName);
-    }
+	public ExpressionExecutor cloneExecutor(String key) {
+		return new GroupByAggregationAttributeExecutor(attributeAggregator.cloneAggregator(key),
+				attributeExpressionExecutors, executionPlanContext, queryName);
+	}
 
+	@Override
+	public Object[] currentState() {
+		HashMap<String, Object[]> data = new HashMap<String, Object[]>();
+		for (Map.Entry<String, AttributeAggregator> entry : aggregatorMap.entrySet()) {
+			data.put(entry.getKey(), entry.getValue().currentState());
+		}
+		return new Object[] { data };
+	}
 
-    @Override
-    public Object[] currentState() {
-        HashMap<String, Object[]> data = new HashMap<String, Object[]>();
-        for (Map.Entry<String, AttributeAggregator> entry : aggregatorMap.entrySet()) {
-            data.put(entry.getKey(), entry.getValue().currentState());
-        }
-        return new Object[]{new AbstractMap.SimpleEntry<String, Object>("Data", data)};
-    }
+	@Override
+	public void restoreState(Object[] state) {
+		HashMap<String, Object[]> data = (HashMap<String, Object[]>) state[0];
 
-    @Override
-    public void restoreState(Object[] state) {
-        Map.Entry<String, Object> stateEntry = (Map.Entry<String, Object>) state[0];
-        HashMap<String, Object[]> data = (HashMap<String, Object[]>) stateEntry.getValue();
+		for (Map.Entry<String, Object[]> entry : data.entrySet()) {
+			String key = entry.getKey();
+			AttributeAggregator aAttributeAggregator = attributeAggregator.cloneAggregator(key);
+			aAttributeAggregator.initAggregator(attributeExpressionExecutors, executionPlanContext);
+			aAttributeAggregator.start();
+			aAttributeAggregator.restoreState(entry.getValue());
+			aggregatorMap.put(key, aAttributeAggregator);
+		}
+	}
 
-        for (Map.Entry<String, Object[]> entry : data.entrySet()) {
-            String key = entry.getKey();
-            AttributeAggregator aAttributeAggregator = attributeAggregator.cloneAggregator(key);
-            aAttributeAggregator.initAggregator(attributeExpressionExecutors, executionPlanContext);
-            aAttributeAggregator.start();
-            aAttributeAggregator.restoreState(entry.getValue());
-            aggregatorMap.put(key, aAttributeAggregator);
-        }
-    }
+	@Override
+	public void start() {
+
+	}
+
+	@Override
+	public void stop() {
+		Iterator<AttributeAggregator> iterator = aggregatorMap.values().iterator();
+		while (iterator.hasNext()) {
+			iterator.next().stop();
+			iterator.remove();
+		}
+
+	}
 }
